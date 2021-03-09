@@ -18,7 +18,10 @@ public class BookingDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int bookingId;
 	
-	int userId;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name ="user_id")
+	User user;
+	
 	LocalDate bookedFrom;
 	LocalDate bookedTo;
 	int noOfAdults;
@@ -63,10 +66,10 @@ public class BookingDetails {
 
 
 
-	public BookingDetails(int userId, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults, int noOfChildren,
+	public BookingDetails(User user, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults, int noOfChildren,
 			double amount, Hotel hotel,  List<RoomDetails> roomDetailsList) {
 		super();
-		this.userId = userId;
+		this.user = user;
 		this.bookedFrom = bookedFrom;
 		this.bookedTo = bookedTo;
 		this.noOfAdults = noOfAdults;
@@ -84,13 +87,20 @@ public class BookingDetails {
 		return bookingId;
 	}
 
-	public int getUserId() {
-		return userId;
+	
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+
+
+
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+
+
 
 	public LocalDate getBookedFrom() {
 		return bookedFrom;
@@ -143,7 +153,7 @@ public class BookingDetails {
 	
 	@Override
 	public String toString() {
-		return "BookingDetails [bookingId=" + bookingId + ", userId=" + userId + ", bookedFrom=" + bookedFrom
+		return "BookingDetails [bookingId=" + bookingId + ", user=" + user + ", bookedFrom=" + bookedFrom
 				+ ", bookedTo=" + bookedTo + ", noOfAdults=" + noOfAdults + ", noOfChildren=" + noOfChildren
 				+ ", amount=" + amount +   "]";
 	}

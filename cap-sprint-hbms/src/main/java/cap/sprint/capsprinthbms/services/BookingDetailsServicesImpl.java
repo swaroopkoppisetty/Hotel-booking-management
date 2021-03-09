@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cap.sprint.capsprinthbms.entities.BookingDetails;
+import cap.sprint.capsprinthbms.entities.Hotel;
 import cap.sprint.capsprinthbms.entities.RoomDetails;
 import cap.sprint.capsprinthbms.exceptions.BookingDetailsNotFoundException;
 import cap.sprint.capsprinthbms.repos.IBookingDetailsRepository;
@@ -24,16 +25,22 @@ public class BookingDetailsServicesImpl {
 	@Autowired
 	RoomDetailsServicesImpl roomDetailsServicesImpl;
 	
+	@Autowired
+	HotelServicesImpl hotelServicesImpl;
+	
 	@Transactional
 	public void addBookingDetails(BookingDetails bd) {
 		
 		List<RoomDetails> rooms = new ArrayList<RoomDetails>();
+		Optional<Hotel> hotel= hotelServicesImpl.viewHotel(bd.getHotel().getHotelId());
+		
 		for(RoomDetails rd : bd.getRoomDetailsList())
 		{
 	
 			rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
 			
 		}
+		bd.setHotel(hotel.get());
 		bd.setRoomDetailsList(rooms);
 		iBookingDetailsRepository.save(bd);
 	
@@ -67,9 +74,10 @@ public class BookingDetailsServicesImpl {
 			
 			
 // Show BookingDetails
-			public BookingDetails viewBookingDetails(int bookingId) {
-				Optional<BookingDetails> findRemoveBookingDetails=iBookingDetailsRepository.findById(bookingId);
-				return findRemoveBookingDetails.get();
+			public Optional<BookingDetails> viewBookingDetails(int bookingId) {
+				Optional<BookingDetails> findBookingDetails=iBookingDetailsRepository.findById(bookingId);
+				System.out.println(findBookingDetails);
+				return findBookingDetails;
 			}
 			
 			

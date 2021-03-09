@@ -136,7 +136,7 @@ public class RoomDetails {
 
 
 
-	public RoomDetails(int room_id, String roomNo, String roomType, double rate_per_day, boolean isavailable,
+	public RoomDetails(int roomId, String roomNo, String roomType, double rate_per_day, boolean isavailable,
 			Hotel hotel) {
 		super();
 		this.roomId = roomId;

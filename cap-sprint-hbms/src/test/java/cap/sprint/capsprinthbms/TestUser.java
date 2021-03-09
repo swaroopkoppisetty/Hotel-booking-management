@@ -51,7 +51,7 @@ class TestUser {
 		
 	}
 	
-	@Test
+//	@Test
 	public void testviewUserList() {
 		System.out.println(userServiceImpl.viewUserList());
 		

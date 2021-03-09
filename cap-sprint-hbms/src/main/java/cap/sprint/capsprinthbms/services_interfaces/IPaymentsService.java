@@ -5,4 +5,6 @@ import cap.sprint.capsprinthbms.entities.Payments;
 public interface IPaymentsService 
 {
 	public void addPayment(Payments p);
+	
+	
 }

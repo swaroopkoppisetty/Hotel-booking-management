@@ -61,7 +61,7 @@ public class Hotel {
 
 
 
-	public Hotel(int hotelid, String city, String hotelname, String address, String description,
+	public Hotel(int hotelId, String city, String hotelname, String address, String description,
 			double average_rate_per_day, String email, String phone1, String phone2, String website) {
 		super();
 		this.hotelId = hotelId;

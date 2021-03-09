@@ -26,12 +26,12 @@ class TestRoomDetails {
 	@Autowired
 	RoomDetailsServicesImpl roomDetailsServicesImpl;
 
-	@Test
+	//@Test
 	public void testaddRoomDetails() {
 		
 		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 		System.out.println(hotel);
-		RoomDetails roomdetails = new RoomDetails("87", "suite", 2000.00, true, hotel);
+		RoomDetails roomdetails = new RoomDetails("97", "suite", 2000.00, true, hotel);
 		System.out.println(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);
 	
@@ -51,11 +51,13 @@ class TestRoomDetails {
 	}
 
 	
-//	@Test
+	@Test
 	public void testUpdateRoomDetails() {
 
 		Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
-		RoomDetails roomDetails = new RoomDetails(1, "97", "non-Suite", 5000.00, false, hotel);
+		RoomDetails roomDetails = new RoomDetails(1,"87", "Non-suite", 2000.00, false, hotel);
+//		roomDetails.setRoomId(1);
+//		roomDetails.setRate_per_day(6000.00);
 		
 		
 		RoomDetails rooms = roomDetailsServicesImpl.updateRoomDetails(roomDetails);

@@ -4,52 +4,52 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import cap.sprint.capsprinthbms.entities.Hotel;
 import cap.sprint.capsprinthbms.repos.IHotelRepository;
 import cap.sprint.capsprinthbms.services.HotelServicesImpl;
 
+@SpringBootTest
 class TestHotel {
-
 	@Autowired
-	HotelServicesImpl hotelService;
+	HotelServicesImpl hotelServices;
     @Autowired
     IHotelRepository hotelRepository;
 
-	@Test
+	//@Test
 	public void testaddHotel() {
 		
 		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 		System.out.println(hotel);
-		hotelService.addHotel(hotel);
+		hotelServices.addHotel(hotel);
 		
 		
 	}
-	@Test
+//	@Test
 	public void testremoveHotel() {
-		
-		hotelService.removeHotel(1);
+		hotelServices.removeHotelById(4);
 		
 	}
 	
-	@Test
+//	@Test
 	public void testupdateHotel() {
 		
-		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+		Hotel hotel = new Hotel(1, "Bangalore", "Royal hotel", "Jubilee hills", "Luxury hotel", 2000.00, "royal@email.com", "123", "321", "royal.com");
 		
-		hotelService.updateHotel(hotel);
+		hotelServices.updateHotel(hotel);
 		
 	}
-	@Test
+//	@Test
 	public void testviewHotel() {
 
-		hotelService.viewHotel(4);
+		hotelServices.viewHotel(4);
 		
 	}
 	
-	@Test
+//	@Test
 	public void testviewAllHotel() {
-		hotelService.viewHotelList();
+		hotelServices.viewHotelList();
 		
 	}
 

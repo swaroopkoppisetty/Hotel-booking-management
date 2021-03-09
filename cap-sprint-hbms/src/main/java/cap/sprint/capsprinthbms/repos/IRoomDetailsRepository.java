@@ -14,6 +14,8 @@ public interface IRoomDetailsRepository extends JpaRepository<RoomDetails, Integ
 	public RoomDetails findByRoomNo(String roomNo);
 //	public Optional<RoomDetails> findByRoomNoAndRoomType(String roomNo, String roomType);
 
+	public RoomDetails findByRoomId(int roomId);
+
 //	public Hotel findByHotelname(String name);
 
 }

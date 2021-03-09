@@ -6,6 +6,8 @@ import cap.sprint.capsprinthbms.entities.BookingDetails;
 
 public interface IBookingDetailsRepository extends JpaRepository<BookingDetails, Integer> {
 	
-	public BookingDetails findByUserId(int id);
+	//public BookingDetails findByUserId(int id);
+
+	public BookingDetails findByBookingId(int bookingId);
 
 }

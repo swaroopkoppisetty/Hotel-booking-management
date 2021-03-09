@@ -27,10 +27,10 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		@Autowired
 		IHotelRepository hotelRepository;
 		
-		
+		@Transactional
 		public void addRoomDetails(RoomDetails rd) {
 			try {
-				Hotel hotel = hotelRepository.findByHotelname((rd.getHotel().getHotelname()));
+				Hotel hotel = hotelRepository.findByHotelName((rd.getHotel().getHotelName()));
 				if(hotel != null){
 					rd.setHotel(hotel);
 				}
@@ -67,20 +67,16 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		@Transactional
 		public RoomDetails updateRoomDetails(RoomDetails roomDetails) {
 			
-				Optional<RoomDetails> getUpdateRoomDetails=roomDetailsRepository.findById(roomDetails.getRoom_id());
-				RoomDetails updateRoom=null;
-				if(getUpdateRoomDetails.isPresent()) {
-				updateRoom=getUpdateRoomDetails.get();
-				if(roomDetails.getRoomNo()!=null)
-				{updateRoom.setRoomNo(roomDetails.getRoomNo());}
+				RoomDetails updateRoom=roomDetailsRepository.findByRoomId(roomDetails.getRoomId());
+
 				if(roomDetails.getRoomType()!=null)
 				{updateRoom.setRoomType(roomDetails.getRoomType());}
 				if(roomDetails.getRate_per_day()!= 0)
 				{updateRoom.setRate_per_day(roomDetails.getRate_per_day());}
-				if(roomDetails.getisIsavailable()!=false||roomDetails.getisIsavailable()!=true)
-				{updateRoom.setIsavailable(roomDetails.getisIsavailable());}
+				if(roomDetails.isIsavailable()!=false||roomDetails.isIsavailable()!=true)
+				{updateRoom.setIsavailable(roomDetails.isIsavailable());}
 				
-		}
+		
 				return updateRoom;
 	}
 		

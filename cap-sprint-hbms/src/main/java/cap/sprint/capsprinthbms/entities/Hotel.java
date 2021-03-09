@@ -9,9 +9,9 @@ public class Hotel {
 		
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int hotelid;
+	int hotelId;
 	String city;
-	String hotelname;
+	String hotelName;
 	String address;
 	String description;
 	double average_rate_per_day;
@@ -32,7 +32,7 @@ public class Hotel {
 			String email, String phone1, String phone2, String website) {
 		super();
 		this.city = city;
-		this.hotelname = hotelname;
+		this.hotelName = hotelname;
 		this.address = address;
 		this.description = description;
 		this.average_rate_per_day = average_rate_per_day;
@@ -47,7 +47,7 @@ public class Hotel {
 			String email, String phone1, String phone2, String website, List<RoomDetails> roomDetailsList) {
 		super();
 		this.city = city;
-		this.hotelname = hotelname;
+		this.hotelName = hotelname;
 		this.address = address;
 		this.description = description;
 		this.average_rate_per_day = average_rate_per_day;
@@ -61,13 +61,29 @@ public class Hotel {
 
 
 
-	public int getHotelid() {
-		return hotelid;
+	public Hotel(int hotelid, String city, String hotelname, String address, String description,
+			double average_rate_per_day, String email, String phone1, String phone2, String website) {
+		super();
+		this.hotelId = hotelId;
+		this.city = city;
+		this.hotelName = hotelname;
+		this.address = address;
+		this.description = description;
+		this.average_rate_per_day = average_rate_per_day;
+		this.email = email;
+		this.phone1 = phone1;
+		this.phone2 = phone2;
+		this.website = website;
 	}
 
 
-	public void setHotelid(int hotelid) {
-		this.hotelid = hotelid;
+	public int getHotelId() {
+		return hotelId;
+	}
+
+
+	public void setHotelId(int hotelId) {
+		this.hotelId = hotelId;
 	}
 
 
@@ -81,13 +97,13 @@ public class Hotel {
 	}
 
 
-	public String getHotelname() {
-		return hotelname;
+	public String getHotelName() {
+		return hotelName;
 	}
 
 
-	public void setHotelname(String hotelname) {
-		this.hotelname = hotelname;
+	public void setHotelName(String hotelName) {
+		this.hotelName = hotelName;
 	}
 
 
@@ -172,9 +188,12 @@ public class Hotel {
 
 	@Override
 	public String toString() {
-		return "Hotel [hotelid=" + hotelid + ", city=" + city + ", hotelname=" + hotelname + ", address=" + address
+		return "Hotel [hotelid=" + hotelId + ", city=" + city + ", hotelname=" + hotelName + ", address=" + address
 				+ ", description=" + description + ", average_rate_per_day=" + average_rate_per_day + ", email=" + email
 				+ ", phone1=" + phone1 + ", phone2=" + phone2 + ", website=" + website+"]";
 	}
+
+
+	
 	
 }

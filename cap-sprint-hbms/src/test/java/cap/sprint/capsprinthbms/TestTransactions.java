@@ -12,17 +12,17 @@ import cap.sprint.capsprinthbms.services.TransactionsServicesImpl;
 @SpringBootTest
 class TestTransactions {
 
+	
 	@Autowired
 	TransactionsServicesImpl transactionServicesImpl;
 	
 	
-	@Test
+//	@Test
 	public void testAddTransaction()
 	{
 	
 		Transactions trasaction = new Transactions(5000.00);
 		transactionServicesImpl.addTransaction(trasaction);
 		
-		
-	}
+}
 }

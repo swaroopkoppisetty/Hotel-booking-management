@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import cap.sprint.capsprinthbms.entities.BookingDetails;
@@ -20,35 +21,29 @@ import cap.sprint.capsprinthbms.services.PaymentsServicesImpl;
 @SpringBootTest
 class TestPayments {
 
+	@Autowired
+	PaymentsServicesImpl paymentsServicesImpl;
 	
+	@Test
+	public void testAddPayment()
+	{
+		User user = new User("Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");
+		System.out.println(user);
+		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+		RoomDetails rd = new RoomDetails("222", "Non-suite", 1000.00, true, hotel);
+		BookingDetails bd = new BookingDetails(user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel,Arrays.asList(rd));
 		
-		@Autowired
-		PaymentsServicesImpl paymentsServicesImpl;
+		Transactions transaction = new Transactions(bd.getAmount());
 		
-		@Test
-		public void testAddPayment()
-		{
-			User user = new User("uuuu", "alien@gmail", "Visitor", "9870065522", "Chennai");
-			System.out.println(user);
-			Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
-			RoomDetails rd = new RoomDetails("222", "Non-suite", 1000.00, true, hotel);
-			BookingDetails bd = new BookingDetails(user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel, Arrays.asList(rd));
-			
-			Transactions transaction = new Transactions(bd.getAmount());
-			
-			
-			System.out.println(transaction);
-			
-			
-			
-			Payments payment =new Payments(bd,transaction);
-			paymentsServicesImpl.addPayment(payment);
-			
-			System.out.println(payment);
-			
-			
-		}
-
+		
+		System.out.println(transaction);
+		
+		
+		
+		Payments payment =new Payments(bd,transaction);
+		paymentsServicesImpl.addPayment(payment);
+		
+		System.out.println(payment);
 }
-
-
+	
+}

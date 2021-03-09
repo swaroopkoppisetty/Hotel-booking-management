@@ -19,7 +19,7 @@ public class BookingDetails {
 	int bookingId;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="user_id")
+	@JoinColumn(name="user_id")
 	User user;
 	
 	LocalDate bookedFrom;
@@ -32,18 +32,70 @@ public class BookingDetails {
 	@JoinColumn(name = "hotel_id")
 	Hotel hotel;
 	
-
+//	@OneToMany(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "room_id")
+//	RoomDetails roomDetails;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	List<RoomDetails> roomDetailsList;
 	
 	
+	
+	
+	
+	
+	
 	public BookingDetails() {
 		
 	}
+	
+	
+	
 
-	
-	
+public BookingDetails(User user, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults, int noOfChildren,
+			double amount, Hotel hotel, List<RoomDetails> roomDetailsList) {
+		super();
+		this.user = user;
+		this.bookedFrom = bookedFrom;
+		this.bookedTo = bookedTo;
+		this.noOfAdults = noOfAdults;
+		this.noOfChildren = noOfChildren;
+		this.amount = amount;
+		this.hotel = hotel;
+		this.roomDetailsList = roomDetailsList;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public BookingDetails(int bookingId, User user, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults,
+		int noOfChildren, double amount, Hotel hotel, List<RoomDetails> roomDetailsList) {
+	super();
+	this.bookingId = bookingId;
+	this.user = user;
+	this.bookedFrom = bookedFrom;
+	this.bookedTo = bookedTo;
+	this.noOfAdults = noOfAdults;
+	this.noOfChildren = noOfChildren;
+	this.amount = amount;
+	this.hotel = hotel;
+	this.roomDetailsList = roomDetailsList;
+}
+
+
+
 
 	public List<RoomDetails> getRoomDetailsList() {
 		return roomDetailsList;
@@ -66,19 +118,6 @@ public class BookingDetails {
 
 
 
-	public BookingDetails(User user, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults, int noOfChildren,
-			double amount, Hotel hotel,  List<RoomDetails> roomDetailsList) {
-		super();
-		this.user = user;
-		this.bookedFrom = bookedFrom;
-		this.bookedTo = bookedTo;
-		this.noOfAdults = noOfAdults;
-		this.noOfChildren = noOfChildren;
-		this.amount = amount;
-		this.hotel = hotel;
-	//	this.roomDetails = roomDetails;
-		this.roomDetailsList = roomDetailsList;
-	}
 
 
 
@@ -88,6 +127,7 @@ public class BookingDetails {
 	}
 
 	
+
 	public User getUser() {
 		return user;
 	}
@@ -95,9 +135,13 @@ public class BookingDetails {
 
 
 
+
+
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+
 
 
 

@@ -16,7 +16,7 @@ public class RoomDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int room_id;
+	int roomId;
 	
 	@Column(unique = true)
 	String roomNo;
@@ -49,8 +49,8 @@ public class RoomDetails {
 
 
 
-	public int getRoom_id() {
-		return room_id;
+	public int getRoomId() {
+		return roomId;
 	}
 
 
@@ -72,8 +72,8 @@ public class RoomDetails {
 
 
 
-	public void setRoom_id(int room_id) {
-		this.room_id = room_id;
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
 	}
 
 
@@ -115,22 +115,15 @@ public class RoomDetails {
 	public void setRate_per_day(double rate_per_day) {
 		this.rate_per_day = rate_per_day;
 	}
+	
+	
 
 
-	public boolean getisIsavailable() {
+	
+
+
+	public boolean isIsavailable() {
 		return isavailable;
-	}
-
-
-	public RoomDetails(int room_id, String roomNo, String roomType, double rate_per_day, boolean isavailable,
-			Hotel hotel) {
-		super();
-		this.room_id = room_id;
-		this.roomNo = roomNo;
-		this.roomType = roomType;
-		this.rate_per_day = rate_per_day;
-		this.isavailable = isavailable;
-		this.hotel = hotel;
 	}
 
 
@@ -142,9 +135,28 @@ public class RoomDetails {
 
 
 
+
+	public RoomDetails(int room_id, String roomNo, String roomType, double rate_per_day, boolean isavailable,
+			Hotel hotel) {
+		super();
+		this.roomId = roomId;
+		this.roomNo = roomNo;
+		this.roomType = roomType;
+		this.rate_per_day = rate_per_day;
+		this.isavailable = isavailable;
+		this.hotel = hotel;
+	}
+
+
+
+
+	
+
+
+
 	@Override
 	public String toString() {
-		return "RoomDetails [room_id=" + room_id + ", roomNo=" + roomNo + ", roomType="
+		return "RoomDetails [room_id=" + roomId + ", roomNo=" + roomNo + ", roomType="
 				+ roomType + ", rate_per_day=" + rate_per_day + ", isavailable=" + isavailable + "]";
 	}
 

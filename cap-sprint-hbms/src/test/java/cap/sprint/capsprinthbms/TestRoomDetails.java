@@ -29,18 +29,18 @@ class TestRoomDetails {
 	@Test
 	public void testaddRoomDetails() {
 		
-		Hotel hotel = new Hotel("Bangalore", "shiv villas", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 		System.out.println(hotel);
-		RoomDetails roomdetails = new RoomDetails("222", "Non-suite", 1000.00, true, hotel);
+		RoomDetails roomdetails = new RoomDetails("87", "suite", 2000.00, true, hotel);
 		System.out.println(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);
 	
 		
 	}
 	
-//	@Test
+	//@Test
 	public void testfindRoomDetails() {
-		RoomDetails rd = roomDetailsServicesImpl.findRoomDetails(7);
+		RoomDetails rd = roomDetailsServicesImpl.findRoomDetails(1);
 		System.out.println(rd);
 	}
 	
@@ -53,19 +53,20 @@ class TestRoomDetails {
 	
 //	@Test
 	public void testUpdateRoomDetails() {
-	//	Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
-	//	RoomDetails roomdetails = new RoomDetails(1, "201", "Suite", 5000.00, false, hotel);
+
+		Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+		RoomDetails roomDetails = new RoomDetails(1, "97", "non-Suite", 5000.00, false, hotel);
 		
-		RoomDetails rd = roomDetailsServicesImpl.findRoomDetails(1);
-//		RoomDetails roomd = roomDetailsServicesImpl.updateRoomDetails(roomdetails);
-		System.out.println(rd);
+		
+		RoomDetails rooms = roomDetailsServicesImpl.updateRoomDetails(roomDetails);
+		System.out.println(rooms);
 
 	}
 	
-//	@Test
+	//@Test
 	public void testdeleteRoomDetails() {
 		
-		roomDetailsServicesImpl.deleteRoomDetails(6);
+		roomDetailsServicesImpl.deleteRoomDetails(1);
 	}
 	
 	

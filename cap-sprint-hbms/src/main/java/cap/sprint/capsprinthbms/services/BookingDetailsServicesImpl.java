@@ -24,14 +24,14 @@ public class BookingDetailsServicesImpl {
 	@Autowired
 	RoomDetailsServicesImpl roomDetailsServicesImpl;
 	
-	
+	@Transactional
 	public void addBookingDetails(BookingDetails bd) {
 		
 		List<RoomDetails> rooms = new ArrayList<RoomDetails>();
 		for(RoomDetails rd : bd.getRoomDetailsList())
 		{
 	
-			rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoom_id()));
+			rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
 			
 		}
 		bd.setRoomDetailsList(rooms);
@@ -41,20 +41,19 @@ public class BookingDetailsServicesImpl {
 	
 				
 // Update BookingDetails	
-			@Transactional
-			public BookingDetails updateBookingDetails(BookingDetails bd3) {
-				Optional<BookingDetails> getUpdateBookingDetails=iBookingDetailsRepository.findById(bd3.getBookingId());
-				BookingDetails updateBookingDetails=null;
-				if(getUpdateBookingDetails.isPresent()) {
-				updateBookingDetails=getUpdateBookingDetails.get();
-				if(bd3.getNoOfAdults()!=0)
-				{updateBookingDetails.setNoOfAdults(bd3.getNoOfAdults());}
-				if(bd3.getNoOfChildren()!=0)
-				{updateBookingDetails.setNoOfChildren(bd3.getNoOfChildren());}
-				
-				}
-				return updateBookingDetails;
-			}
+	@Transactional
+	public BookingDetails updateBookingDetails(BookingDetails bd3) {
+	
+		BookingDetails updateBookingDetails=iBookingDetailsRepository.findByBookingId(bd3.getBookingId());
+
+		if(bd3.getNoOfAdults()!=0)
+		{updateBookingDetails.setNoOfAdults(bd3.getNoOfAdults());}
+		if(bd3.getNoOfChildren()!=0)
+		{updateBookingDetails.setNoOfChildren(bd3.getNoOfChildren());}
+		
+		
+		return updateBookingDetails;
+	}
 		
 // Delete BookingDetails	
 			public void removeBookingDetails(int id) {

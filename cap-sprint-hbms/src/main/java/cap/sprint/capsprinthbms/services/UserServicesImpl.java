@@ -8,7 +8,10 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cap.sprint.capsprinthbms.entities.RoomDetails;
 import cap.sprint.capsprinthbms.entities.User;
+import cap.sprint.capsprinthbms.exceptions.RoomDetailsNotFoundException;
+import cap.sprint.capsprinthbms.exceptions.UserNotFoundException;
 import cap.sprint.capsprinthbms.repos.IUserRepository;
 import cap.sprint.capsprinthbms.services_interfaces.IUserService;
 
@@ -46,15 +49,14 @@ public class UserServicesImpl implements IUserService {
 	}
 	
 // Delete User	
-	public User removeUser(User user) {
-		Optional<User> findRemoveUser=userRepository.findById(user.getUserId());
-		User removeUser=null;
-		if(findRemoveUser.isPresent()) {
-		removeUser=findRemoveUser.get();
-		userRepository.delete(removeUser);
-		}
-		return removeUser;
-	}
+	public void removeUser(int id){
+		Optional<User> user = userRepository.findById(id);
+		
+		if(user.isPresent())
+			userRepository.deleteById(id);
+		else throw new UserNotFoundException("No user found with this  id "+ id+ "to delete");
+
+	   }
 	
 // Show User
 	public User viewUser(int userId) {

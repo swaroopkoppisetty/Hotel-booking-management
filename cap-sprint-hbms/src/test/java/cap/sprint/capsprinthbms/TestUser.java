@@ -15,10 +15,10 @@ class TestUser {
 	@Autowired
 	UserServicesImpl userServiceImpl;
 
-	@Test
+	//@Test
 	public void testaddUser() {
 		
-		User user = new User("Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");
+		User user = new User("Rani", "rani@gmail", "Visitor", "9870065522", "Chennai");
 		System.out.println(user);
 		userServiceImpl.addUser(user);
 		
@@ -27,16 +27,17 @@ class TestUser {
 	//@Test
 	public void testremoveUser() {
 		
-		User user = new User(6,"Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");
-		System.out.println("Removing this user"+ user);
-		userServiceImpl.removeUser(user);
+		System.out.println("Removing this user");
+		userServiceImpl.removeUser(1);
+		
+		
 		
 	}
 	
 //	@Test
 	public void testupdateUser() {
 		
-		User user = new User(3,"Mindy", "mmtesting@gmail", "Guest", "87654321", "UK");
+		User user = new User(2,"Raju", "mmtesting@gmail", "Guest", "87654321", "UK");
 		System.out.println("Updating this user"+ user);
 		userServiceImpl.updateUser(user);
 		
@@ -46,11 +47,11 @@ class TestUser {
 //	@Test
 	public void testviewUser() {
 
-		System.out.println(userServiceImpl.viewUser(4));
+		System.out.println(userServiceImpl.viewUser(2));
 		
 	}
 	
-//	@Test
+	@Test
 	public void testviewUserList() {
 		System.out.println(userServiceImpl.viewUserList());
 		

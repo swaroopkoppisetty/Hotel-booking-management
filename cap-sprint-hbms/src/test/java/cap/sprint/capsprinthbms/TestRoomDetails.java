@@ -26,12 +26,12 @@ class TestRoomDetails {
 	@Autowired
 	RoomDetailsServicesImpl roomDetailsServicesImpl;
 
-	//@Test
+	@Test
 	public void testaddRoomDetails() {
 		
 		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 		System.out.println(hotel);
-		RoomDetails roomdetails = new RoomDetails("97", "suite", 2000.00, true, hotel);
+		RoomDetails roomdetails = new RoomDetails("27", "suite", 2000.00, true, hotel);
 		System.out.println(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);
 	

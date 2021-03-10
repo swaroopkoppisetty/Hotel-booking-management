@@ -1,9 +1,12 @@
 package cap.sprint.capsprinthbms.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -18,11 +21,20 @@ public class Transactions {
 	Integer transactionId;
 	
 	double amount;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	Payments payments;
+	
+	
+	
 
 	public Transactions(double amount) {
 		super();
 		this.amount = amount;
 	}
+	
+	
+	
 	
 	public Transactions()
 	{
@@ -30,6 +42,38 @@ public class Transactions {
 	}
 
 	
+	
+
+	public Transactions( double amount, Payments payments) {
+		super();
+		
+		this.amount = amount;
+		this.payments = payments;
+	}
+
+
+
+
+	public Payments getPayments() {
+		return payments;
+	}
+
+
+
+
+	public void setPayments(Payments payments) {
+		this.payments = payments;
+	}
+
+
+
+
+	public void setTransactionId(Integer transactionId) {
+		this.transactionId = transactionId;
+	}
+
+
+
 
 	public Integer getTransactionId() {
 		return transactionId;

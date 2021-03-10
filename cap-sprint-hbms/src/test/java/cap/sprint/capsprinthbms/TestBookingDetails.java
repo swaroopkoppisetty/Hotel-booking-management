@@ -22,7 +22,7 @@ class TestBookingDetails {
 	@Autowired
 	BookingDetailsServicesImpl bookingDetailsServicesImpl;
 	
-//	@Test
+	@Test
 	public void testAddBookingDetails() {
 		
 		User user = new User("Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");

@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 import cap.sprint.capsprinthbms.entities.Hotel;
 import cap.sprint.capsprinthbms.entities.RoomDetails;
 import cap.sprint.capsprinthbms.exceptions.NoRoomsListedException;
-import cap.sprint.capsprinthbms.exceptions.RoomDetailsNotFoundException;
+import cap.sprint.capsprinthbms.exceptions.NotFoundException;
+
 import cap.sprint.capsprinthbms.repos.IHotelRepository;
 import cap.sprint.capsprinthbms.repos.IRoomDetailsRepository;
 import cap.sprint.capsprinthbms.services_interfaces.IRoomDetailsService;
@@ -48,7 +49,7 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 			Optional<RoomDetails> roomDetails = roomDetailsRepository.findById(id);
 			
 			if(!roomDetails.isPresent())
-				throw new RoomDetailsNotFoundException("No Room Details found with id "+id);
+				throw new NotFoundException("No Room Details found with id "+id);
 			else
 				System.out.println(roomDetails.get());
 		return roomDetails.get();
@@ -58,7 +59,7 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		public List<RoomDetails> findAllRoomDetails() {
 			List<RoomDetails> rd = roomDetailsRepository.findAll();
 			if(rd.isEmpty())
-				throw new NoRoomsListedException("No room are present");
+				throw new NotFoundException("No room are present");
 				
 			 return rd;      
 			
@@ -88,7 +89,7 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 			
 			if(room.isPresent())
 				roomDetailsRepository.deleteById(id);
-			else throw new RoomDetailsNotFoundException("No room details found with this room id "+ id+ "to delete");
+			else throw new NotFoundException("No room details found with this room id "+ id+ "to delete");
 
 		   }
 		

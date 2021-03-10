@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cap.sprint.capsprinthbms.entities.Hotel;
-import cap.sprint.capsprinthbms.exceptions.HotelAlreayExistsException;
+import cap.sprint.capsprinthbms.entities.RoomDetails;
+import cap.sprint.capsprinthbms.exceptions.AlreadyExistsException;
+import cap.sprint.capsprinthbms.exceptions.NotFoundException;
 import cap.sprint.capsprinthbms.repos.IHotelRepository;
 import cap.sprint.capsprinthbms.services_interfaces.IHotelService;
 
@@ -25,7 +27,7 @@ public class HotelServicesImpl implements IHotelService{
 		Hotel hotel = hotelRepository.findByHotelName(h.getHotelName());
 		if(hotel == null)
 			hotelRepository.save(h);
-		else throw new HotelAlreayExistsException("hotel already exists with the id" + h.getHotelId());
+		else throw new AlreadyExistsException("hotel already exists with the id" + h.getHotelId());
 	}
 	
 	@Transactional
@@ -34,12 +36,8 @@ public class HotelServicesImpl implements IHotelService{
 		Hotel updatehotel=hotelRepository.findByHotelId(hotel.getHotelId());
 		
 			
-			if(hotel.getCity()!=null)
-			{updatehotel.setCity(hotel.getCity());}
-			if(hotel.getHotelName()!=null)
-			{updatehotel.setHotelName(hotel.getHotelName());}
-			if(hotel.getAddress()!= null)
-			{updatehotel.setAddress(hotel.getAddress());}
+			
+			
 			if(hotel.getDescription()!= null)
 			{updatehotel.setDescription(hotel.getDescription());}
 			if(hotel.getAverage_rate_per_day()!= 0.0)
@@ -59,11 +57,23 @@ public class HotelServicesImpl implements IHotelService{
 		
 		
 		
-		public void removeHotelById(int id) {
-			
-			hotelRepository.deleteById(id);;
+		public void removeHotelById(int id) 
+		{
+			Optional<Hotel> hotel = hotelRepository.findById(id);
+			if(hotel.isPresent())
+			{
+				hotelRepository.deleteById(id);
 			}
+			
+			else
+			{
+				throw new NotFoundException("No hotel found with this hotel id "+id);
 
+			}
+		}
+
+		
+		
 		public List<Hotel> viewHotelList(){
 			List<Hotel> list = hotelRepository.findAll();
 			System.out.println(list);

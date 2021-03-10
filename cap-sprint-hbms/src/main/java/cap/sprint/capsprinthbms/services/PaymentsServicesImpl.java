@@ -22,23 +22,25 @@ public class PaymentsServicesImpl implements IPaymentsService
 	@Autowired
 	IPaymentsRepository paymentRepository;
 	
-	@Autowired
-	RoomDetailsServicesImpl roomDetailsServicesImpl;
 	
-	@Autowired
-	HotelServicesImpl hotelServicesImpl;
 	
 	@Autowired
 	BookingDetailsServicesImpl bookingDetailsServicesImpl;
 	
 	@Transactional
-	public void addPayment(Payments p)
+	public void addPayment(Payments payment)
 	{
-		Optional <BookingDetails> bd= bookingDetailsServicesImpl.viewBookingDetails(p.getBookingDetails().getBookingId());
+		Optional <BookingDetails> bd= bookingDetailsServicesImpl.viewBookingDetails(payment.getBookingDetails().getBookingId());
 		
-		p.setBookingDetails(bd.get());
-		paymentRepository.save(p);
+		payment.setBookingDetails(bd.get());
+		paymentRepository.save(payment);
 			
+	}
+	
+	public Optional<Payments> viewPayments(int paymentId)
+	{
+			Optional<Payments> payments = paymentRepository.findById(paymentId);
+			return payments;
 	}
 	
 

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import cap.sprint.capsprinthbms.entities.BookingDetails;
 import cap.sprint.capsprinthbms.entities.Hotel;
 import cap.sprint.capsprinthbms.entities.RoomDetails;
-import cap.sprint.capsprinthbms.exceptions.BookingDetailsNotFoundException;
+import cap.sprint.capsprinthbms.exceptions.NotFoundException;
 import cap.sprint.capsprinthbms.repos.IBookingDetailsRepository;
 
 
@@ -38,6 +38,8 @@ public class BookingDetailsServicesImpl {
 		{
 	
 			rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
+		
+	
 			
 		}
 		bd.setHotel(hotel.get());
@@ -67,7 +69,8 @@ public class BookingDetailsServicesImpl {
 				Optional<BookingDetails> bd = iBookingDetailsRepository.findById(id);
 				if(bd.isPresent())
 					iBookingDetailsRepository.deleteById(id);
-				else throw new BookingDetailsNotFoundException("No Booking Details found with this id"+ id);
+				
+				else throw new NotFoundException("No Booking Details found with this id"+ id);
 				
 				}
 	

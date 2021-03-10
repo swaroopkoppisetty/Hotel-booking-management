@@ -26,7 +26,7 @@ public class Hotel {
 	String phone2;
 	String website;
 	
-	@OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)
 	List<RoomDetails> roomDetailsList;
 	
 	public Hotel() {

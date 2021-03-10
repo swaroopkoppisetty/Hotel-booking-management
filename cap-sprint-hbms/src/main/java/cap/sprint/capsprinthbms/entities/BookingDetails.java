@@ -24,7 +24,7 @@ public class BookingDetails {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int bookingId;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="user_id")
 	User user;
 	
@@ -34,15 +34,15 @@ public class BookingDetails {
 	int noOfChildren;
 	double amount;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "hotel_id")
 	Hotel hotel;
 	
-//	@OneToMany(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "room_id")
+//	@OneToMany(cascade = CascadeType.PERSIST)
+	//@JoinColumn(name = "room_id")
 //	RoomDetails roomDetails;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.PERSIST)
 	List<RoomDetails> roomDetailsList;
 	
 	
@@ -57,6 +57,15 @@ public class BookingDetails {
 	
 	
 	
+	
+	
+
+
+
+
+
+
+
 
 public BookingDetails(User user, LocalDate bookedFrom, LocalDate bookedTo, int noOfAdults, int noOfChildren,
 			double amount, Hotel hotel, List<RoomDetails> roomDetailsList) {
@@ -114,12 +123,18 @@ public BookingDetails(User user, LocalDate bookedFrom, LocalDate bookedTo, int n
 		this.roomDetailsList = roomDetailsList;
 	}
 
+	
+	
 
 
 
 	public void setBookingId(int bookingId) {
 		this.bookingId = bookingId;
 	}
+
+
+
+
 
 
 

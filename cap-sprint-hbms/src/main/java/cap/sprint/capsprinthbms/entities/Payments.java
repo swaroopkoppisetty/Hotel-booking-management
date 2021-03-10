@@ -23,13 +23,15 @@ public class Payments {
 	int paymentId;
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name ="booking_id")
 	BookingDetails bookingDetails;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="transaction_id")
-	 Transactions transactions;
+	@OneToOne(mappedBy = "payments", cascade = CascadeType.PERSIST)
+	//@JoinColumn(name="transaction_id",insertable = false)
+	Transactions transactions;
+	
+	
 	
 	
 
@@ -46,6 +48,15 @@ public class Payments {
 
 
 	public void setBookingDetails(BookingDetails bookingDetails) {
+		this.bookingDetails = bookingDetails;
+	}
+
+	
+
+
+public Payments(int paymentId, BookingDetails bookingDetails) {
+		super();
+		this.paymentId = paymentId;
 		this.bookingDetails = bookingDetails;
 	}
 
@@ -72,6 +83,15 @@ public class Payments {
 	public Payments() {
 		
 	}
+
+
+
+public Payments(BookingDetails bookingDetails) {
+	super();
+	this.bookingDetails = bookingDetails;
+}
+	
+	
 
 
 

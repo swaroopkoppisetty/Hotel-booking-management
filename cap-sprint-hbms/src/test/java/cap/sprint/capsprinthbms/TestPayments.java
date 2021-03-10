@@ -24,26 +24,21 @@ class TestPayments {
 	@Autowired
 	PaymentsServicesImpl paymentsServicesImpl;
 	
-//	@Test
+	@Test
 	public void testAddPayment()
 	{
-	User user = new User("Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");
+	User user = new User(4,"Raj", "rajjj@gmail", "Visitor", "9870065522", "Chennai");
 	System.out.println(user);
 	Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 	System.out.println(hotel);
 	RoomDetails rd = new RoomDetails();
-	rd.setRoomId(3);
+	rd.setRoomId(1);
 	System.out.println(rd);
-		BookingDetails bd = new BookingDetails(6,user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel,Arrays.asList(rd));
+	BookingDetails bd = new BookingDetails(3,user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel,Arrays.asList(rd));
 		
-		Transactions transaction = new Transactions(bd.getAmount());
+//	Payments payment =new Payments(bd,transaction);
 		
-		
-		System.out.println(transaction);
-		
-		
-		
-		Payments payment =new Payments(bd,transaction);
+		Payments payment = new Payments(bd);
 		paymentsServicesImpl.addPayment(payment);
 		
 		System.out.println(payment);

@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 
 import cap.sprint.capsprinthbms.entities.RoomDetails;
 import cap.sprint.capsprinthbms.entities.User;
-import cap.sprint.capsprinthbms.exceptions.RoomDetailsNotFoundException;
-import cap.sprint.capsprinthbms.exceptions.UserNotFoundException;
+
+import cap.sprint.capsprinthbms.exceptions.NotFoundException;
 import cap.sprint.capsprinthbms.repos.IUserRepository;
 import cap.sprint.capsprinthbms.services_interfaces.IUserService;
 
@@ -36,8 +36,6 @@ public class UserServicesImpl implements IUserService {
 		updateUser=getUpdateUser.get();
 		if(user.getUserName()!=null)
 		{updateUser.setUserName(user.getUserName());}
-		if(user.getEmail()!=null)
-		{updateUser.setEmail(user.getEmail());}
 		if(user.getRole()!=null)
 		{updateUser.setRole(user.getRole());}
 		if(user.getMobile()!=null)
@@ -54,20 +52,36 @@ public class UserServicesImpl implements IUserService {
 		
 		if(user.isPresent())
 			userRepository.deleteById(id);
-		else throw new UserNotFoundException("No user found with this  id "+ id+ "to delete");
+		else throw new NotFoundException("No user found with this  id "+ id+ "to delete");
 
 	   }
 	
 // Show User
 	public User viewUser(int userId) {
-		Optional<User> findRemoveUser=userRepository.findById(userId);
-		return findRemoveUser.get();
+		Optional<User> findUser=userRepository.findById(userId);
+		if(findUser.isPresent())
+		{
+		return findUser.get();
+		}
+		else
+		{
+			 throw new NotFoundException("No user found with this  id "+ userId );
+		}
+		
+		
 	}
 	
 	
 // Show All Users	
 	public List<User>viewUserList(){
 		List<User>user=userRepository.findAll();
+		if(user!=null)
+		{
 		return user;
+		}
+		else
+		{
+			 throw new NotFoundException("No user found " );
+		}
 	}
 }

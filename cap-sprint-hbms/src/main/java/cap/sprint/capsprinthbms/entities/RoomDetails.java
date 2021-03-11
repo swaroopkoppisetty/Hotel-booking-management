@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -30,6 +31,14 @@ public class RoomDetails {
 	double rate_per_day;
 	boolean isavailable;
 	
+	String fileName;
+
+    String fileType;
+	
+	@Lob
+	byte[] data;
+	
+	
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "hotel_id")
 	Hotel hotel;
@@ -50,6 +59,27 @@ public class RoomDetails {
 		this.rate_per_day = rate_per_day;
 		this.isavailable = isavailable;
 		this.hotel = hotel;
+	}
+
+	
+
+
+
+	
+
+
+
+	public RoomDetails(String roomNo, String roomType, double rate_per_day, boolean isavailable, String fileName,
+			String fileType, byte[] data) {
+		super();
+		this.roomNo = roomNo;
+		this.roomType = roomType;
+		this.rate_per_day = rate_per_day;
+		this.isavailable = isavailable;
+		this.fileName = fileName;
+		this.fileType = fileType;
+		this.data = data;
+		
 	}
 
 
@@ -83,14 +113,7 @@ public class RoomDetails {
 	}
 
 
-//	public int getHotel_id() {
-//		return hotel_id;
-//	}
-//
-//
-//	public void setHotel_id(int hotel_id) {
-//		this.hotel_id = hotel_id;
-//	}
+
 
 
 	public String getRoomNo() {
@@ -123,9 +146,52 @@ public class RoomDetails {
 	}
 	
 	
+	
 
 
 	
+
+
+	public String getFileName() {
+		return fileName;
+	}
+
+
+
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+
+
+
+	public String getFileType() {
+		return fileType;
+	}
+
+
+
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
+
+
+
+	public byte[] getData() {
+		return data;
+	}
+
+
+
+
+	public void setData(byte[] data) {
+		this.data = data;
+	}
+
+
 
 
 	public boolean isIsavailable() {
@@ -157,6 +223,23 @@ public class RoomDetails {
 
 
 	
+
+
+
+	public RoomDetails(int roomId, String roomNo, String roomType, double rate_per_day, boolean isavailable,
+			String fileName, String fileType, byte[] data, Hotel hotel) {
+		super();
+		this.roomId = roomId;
+		this.roomNo = roomNo;
+		this.roomType = roomType;
+		this.rate_per_day = rate_per_day;
+		this.isavailable = isavailable;
+		this.fileName = fileName;
+		this.fileType = fileType;
+		this.data = data;
+		this.hotel = hotel;
+	}
+
 
 
 

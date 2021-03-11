@@ -27,9 +27,9 @@ public class Payments {
 	@JoinColumn(name ="booking_id")
 	BookingDetails bookingDetails;
 	
-	@OneToOne(mappedBy = "payments", cascade = CascadeType.PERSIST)
+	//@OneToOne(mappedBy = "payments", cascade = CascadeType.PERSIST)
 	//@JoinColumn(name="transaction_id",insertable = false)
-	Transactions transactions;
+	//Transactions transactions;
 	
 	
 	
@@ -62,23 +62,19 @@ public Payments(int paymentId, BookingDetails bookingDetails) {
 
 
 
-	public Transactions getTransaction() {
-		return transactions;
-	}
+//	public Transactions getTransaction() {
+//		return transactions;
+//	}
+//
+//
+//
+//	public void setTransaction(Transactions transactions) {
+//		this.transactions = transactions;
+//	}
 
 
 
-	public void setTransaction(Transactions transactions) {
-		this.transactions = transactions;
-	}
 
-
-
-	public Payments(BookingDetails bookingDetails, Transactions transactions) {
-		super();
-		this.bookingDetails = bookingDetails;
-		this.transactions = transactions;
-	}
 	
 	public Payments() {
 		
@@ -97,8 +93,7 @@ public Payments(BookingDetails bookingDetails) {
 
 	@Override
 	public String toString() {
-		return "Payments [paymentId=" + paymentId + ", bookingDetails=" + bookingDetails + ", transactions=" + transactions
-				+ "]";
+		return "Payments [paymentId=" + paymentId + ", bookingDetails=" + bookingDetails + "]";
 	}
 
 }

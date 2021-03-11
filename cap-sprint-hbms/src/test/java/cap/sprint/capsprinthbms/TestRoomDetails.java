@@ -31,7 +31,7 @@ class TestRoomDetails {
 		
 		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 		System.out.println(hotel);
-		RoomDetails roomdetails = new RoomDetails("47", "suite", 2000.00, true, hotel);
+		RoomDetails roomdetails = new RoomDetails("101", "suite", 2000.00, true, hotel);
 		System.out.println(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);
 	

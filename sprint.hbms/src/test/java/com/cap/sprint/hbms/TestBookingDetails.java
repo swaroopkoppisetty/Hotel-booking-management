@@ -35,7 +35,7 @@ class TestBookingDetails {
 //		System.out.println(hotel);
 		logger.info(hotel);
 		RoomDetails rd = new RoomDetails();
-		rd.setRoomId(1);
+		rd.setRoomId(5);
 //		System.out.println(rd);
 		logger.info(rd);
 

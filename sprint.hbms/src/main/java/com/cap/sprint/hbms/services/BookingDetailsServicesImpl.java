@@ -22,6 +22,7 @@ import com.cap.sprint.hbms.repos.IBookingDetailsRepository;
 
 @Service
 public class BookingDetailsServicesImpl {
+	
 	Logger logger = LogManager.getLogger(BookingDetailsServicesImpl.class);
 	@Autowired
 	IBookingDetailsRepository iBookingDetailsRepository;
@@ -38,19 +39,16 @@ public class BookingDetailsServicesImpl {
 		List<RoomDetails> rooms = new ArrayList<RoomDetails>();
 		Optional<Hotel> hotel= hotelServicesImpl.viewHotel(bd.getHotel().getHotelId());
 		
-		for(RoomDetails rd : bd.getRoomDetailsList())
-		{
-	
-			rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
 		
-	
-			
-		}
-		bd.setHotel(hotel.get());
-		bd.setRoomDetailsList(rooms);
-		return iBookingDetailsRepository.save(bd);
-	
-	}
+			for(RoomDetails rd : bd.getRoomDetailsList())
+			{
+				rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
+			}
+			bd.setHotel(hotel.get());
+			bd.setRoomDetailsList(rooms);
+			return iBookingDetailsRepository.save(bd);
+		
+}
 	
 				
 // Update BookingDetails	
@@ -58,11 +56,17 @@ public class BookingDetailsServicesImpl {
 	public BookingDetails updateBookingDetails(BookingDetails bd3) {
 	
 		BookingDetails updateBookingDetails=iBookingDetailsRepository.findByBookingId(bd3.getBookingId());
+		
+		if(updateBookingDetails != null)
+		{
 
-		if(bd3.getNoOfAdults()!=0)
-		{updateBookingDetails.setNoOfAdults(bd3.getNoOfAdults());}
-		if(bd3.getNoOfChildren()!=0)
-		{updateBookingDetails.setNoOfChildren(bd3.getNoOfChildren());}
+			if(bd3.getNoOfAdults()!=0)
+			{updateBookingDetails.setNoOfAdults(bd3.getNoOfAdults());}
+			if(bd3.getNoOfChildren()!=0)
+			{updateBookingDetails.setNoOfChildren(bd3.getNoOfChildren());}
+		}
+		
+		else throw new NotFoundException("No Booking details are there with this id " + bd3.getBookingId());
 		
 		
 		return updateBookingDetails;
@@ -89,21 +93,32 @@ public class BookingDetailsServicesImpl {
 // Show BookingDetails
 			public Optional<BookingDetails> viewBookingDetails(int bookingId) {
 				Optional<BookingDetails> findBookingDetails=iBookingDetailsRepository.findById(bookingId);
-				logger.info(findBookingDetails);
-				return findBookingDetails;
+				
+				
+				if(!findBookingDetails.isPresent())
+					
+					throw new NotFoundException("Booking details not found");
+					
+				else 
+				{
+					logger.info(findBookingDetails);
+					return findBookingDetails;
+				}
+
 			}
 			
 			
 // Show All BookingDetails	
 			public List<BookingDetails>viewBookingDetailsList(){
+				
 				List<BookingDetails> b = iBookingDetailsRepository.findAll();
-				for(BookingDetails bookingdetail: b) {
-					List<RoomDetails> rooms= bookingdetail.getRoomDetailsList();
-					for(RoomDetails room : rooms) {
-						room.setData(null);
-					}
-					
-				}
+				
+				
+				if(b.isEmpty())
+					throw new NotFoundException("No hotels Found to show");
+				
+				
+				logger.info(b);
 				return b;
 			}
 			

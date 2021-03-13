@@ -80,13 +80,17 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 			
 				RoomDetails updateRoom=roomDetailsRepository.findByRoomId(roomDetails.getRoomId());
 
-				if(roomDetails.getRoomType()!=null)
-				{updateRoom.setRoomType(roomDetails.getRoomType());}
-				if(roomDetails.getRate_per_day()!= 0)
-				{updateRoom.setRate_per_day(roomDetails.getRate_per_day());}
-				if(roomDetails.isIsavailable()!=false||roomDetails.isIsavailable()!=true)
-				{updateRoom.setIsavailable(roomDetails.isIsavailable());}
+				if(updateRoom != null)
+				{
+
+					if(roomDetails.getRate_per_day()!= 0)
+					{updateRoom.setRate_per_day(roomDetails.getRate_per_day());}
+					if(roomDetails.isIsavailable()!=false||roomDetails.isIsavailable()!=true)
+					{updateRoom.setIsavailable(roomDetails.isIsavailable());}
+					
+				}
 				
+				else throw new NotFoundException("No room exists to update with this id" +roomDetails.getRoomId());
 		
 				return updateRoom;
 			
@@ -111,29 +115,31 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		   }
 		
 		public RoomDetails storeFile(MultipartFile file) {
-	        // Normalize file name
-	        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+	        
+			// Normalize file name
+	        
+			String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
-	        try {
-	            // Check if the file's name contains invalid characters
+	        try
+	        {
+// Check if the file's name contains invalid characters
+	        	
 	            if(fileName.contains("..")) {
 	                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
 	            }
-
-	            
-	          
-	           
-	            
 	            Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
 	            
-	            RoomDetails dbFile= new RoomDetails(1,"47","suite",2000.00,true,fileName,file.getContentType(), file.getBytes(),hotel);
+	            RoomDetails room= new RoomDetails(1,"47","suite",2000.00,true,fileName,file.getContentType(), file.getBytes(),hotel);
 	            
 
-	            return roomDetailsRepository.save(dbFile);
-	        } catch (IOException ex) {
+	            return roomDetailsRepository.save(room);
+	        } 
+	        catch (IOException ex) 
+	        {
 	            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
 	        }
 	    }
+		
 		
 		public RoomDetails getFile(int roomId)
 		 {

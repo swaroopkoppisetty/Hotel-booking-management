@@ -1,5 +1,401 @@
-2021-03-13 15:02:24,691 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 6356 (D:\sprint.hbms\bin\main started by swaroop in D:\sprint.hbms)
-2021-03-13 15:02:24,696 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-03-13 15:02:24,697 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
-2021-03-13 15:02:28,358 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-03-13 15:02:29,039 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 4.696 seconds (JVM running for 5.54)
+2021-03-13 15:28:23,008 INFO o.s.b.StartupInfoLogger [main] Starting TestRoomDetails using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 19404 (started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 15:28:23,023 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 15:28:23,027 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-13 15:28:28,622 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:28:30,570 INFO o.s.b.StartupInfoLogger [main] Started TestRoomDetails in 7.955 seconds (JVM running for 9.679)
+2021-03-13 15:28:30,845 INFO c.c.s.h.TestRoomDetails [main] Hotel [hotelid=0, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=1000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]
+2021-03-13 15:28:30,845 INFO c.c.s.h.TestRoomDetails [main] RoomDetails [room_id=0, roomNo=50, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 15:30:12,897 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-8] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=1000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 15:30:12,899 INFO c.c.s.h.s.RoomDetailsServicesImpl [http-nio-8082-exec-8] RoomDetails [room_id=8, roomNo=50, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 15:37:57,269 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 15:37:57,270 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 15:37:57,270 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 15:37:58,937 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:37:59,186 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.958 seconds (JVM running for 1718.224)
+2021-03-13 15:38:40,259 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-3] Optional[BookingDetails [bookingId=3, user=User [userId=4, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 15:40:20,124 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 15:40:20,125 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 15:40:20,125 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 15:40:21,741 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:40:21,977 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.897 seconds (JVM running for 1861.016)
+2021-03-13 15:40:36,075 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-2] Optional[BookingDetails [bookingId=3, user=User [userId=4, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 15:40:36,118 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to access lob stream; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to access lob stream (through reference chain: com.cap.sprint.hbms.entities.BookingDetails["roomDetailsList"])]
+2021-03-13 15:40:36,131 WARN o.h.e.l.i.LoadContexts [http-nio-8082-exec-2] HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@7fb8dd26<rs=HikariProxyResultSet@386444507 wrapping org.postgresql.jdbc.PgResultSet@6245fa1f>
+2021-03-13 15:40:36,131 WARN o.h.e.l.i.CollectionLoadContext [http-nio-8082-exec-2] HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [1] entries
+2021-03-13 15:44:33,454 WARN o.h.e.l.i.LoadContexts [http-nio-8082-exec-4] HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@235a6d92<rs=HikariProxyResultSet@856979763 wrapping org.postgresql.jdbc.PgResultSet@68e225c6>
+2021-03-13 15:44:33,454 WARN o.h.e.l.i.CollectionLoadContext [http-nio-8082-exec-4] HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [1] entries
+2021-03-13 15:44:33,456 ERROR o.a.j.l.DirectJDKLog [http-nio-8082-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.hibernate.HibernateException: Unable to access lob stream] with root cause
+org.postgresql.util.PSQLException: Large Objects may not be used in auto-commit mode.
+	at org.postgresql.largeobject.LargeObjectManager.open(LargeObjectManager.java:243) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.largeobject.LargeObjectManager.open(LargeObjectManager.java:229) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.AbstractBlobClob.getLo(AbstractBlobClob.java:272) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.AbstractBlobClob.getBinaryStream(AbstractBlobClob.java:117) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.hibernate.type.descriptor.java.PrimitiveByteArrayTypeDescriptor.wrap(PrimitiveByteArrayTypeDescriptor.java:120) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.descriptor.java.PrimitiveByteArrayTypeDescriptor.wrap(PrimitiveByteArrayTypeDescriptor.java:26) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.descriptor.sql.BlobTypeDescriptor$1.doExtract(BlobTypeDescriptor.java:48) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:47) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:257) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:253) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:243) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.type.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:329) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.hydrate(AbstractEntityPersister.java:3135) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.loadFromResultSet(EntityReferenceInitializerImpl.java:342) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.hydrateEntityState(EntityReferenceInitializerImpl.java:269) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.process.internal.AbstractRowReader.readRow(AbstractRowReader.java:102) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractRows(ResultSetProcessorImpl.java:157) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:94) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:105) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:87) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.persister.collection.AbstractCollectionPersister.initialize(AbstractCollectionPersister.java:710) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.DefaultInitializeCollectionEventListener.onInitializeCollection(DefaultInitializeCollectionEventListener.java:76) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.initializeCollection(SessionImpl.java:2163) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.collection.internal.AbstractPersistentCollection$4.doWork(AbstractPersistentCollection.java:589) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.collection.internal.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:264) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.collection.internal.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:585) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.collection.internal.AbstractPersistentCollection.read(AbstractPersistentCollection.java:149) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.collection.internal.PersistentBag.iterator(PersistentBag.java:387) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at com.cap.sprint.hbms.services.BookingDetailsServicesImpl.viewBookingDetailsList(BookingDetailsServicesImpl.java:102) ~[main/:?]
+	at com.cap.sprint.hbms.services.BookingDetailsServicesImpl$$FastClassBySpringCGLIB$$1a59d214.invoke(<generated>) ~[main/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.4.jar:5.3.4]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688) ~[spring-aop-5.3.4.jar:5.3.4]
+	at com.cap.sprint.hbms.services.BookingDetailsServicesImpl$$EnhancerBySpringCGLIB$$13b3b6ac.viewBookingDetailsList(<generated>) ~[main/:?]
+	at com.cap.sprint.hbms.controllers.BookingDetailsController.viewBookingDetailsList(BookingDetailsController.java:93) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-03-13 15:44:56,876 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 15:44:56,876 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 15:44:56,877 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 15:44:58,924 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:44:59,261 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.445 seconds (JVM running for 2138.299)
+2021-03-13 15:45:26,286 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-3] [Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=1000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 15:45:43,562 INFO c.c.s.h.s.RoomDetailsServicesImpl [http-nio-8082-exec-6] RoomDetails [room_id=1, roomNo=47, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 15:55:48,505 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 15:55:48,506 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 15:55:48,507 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 15:55:50,286 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 15:55:50,537 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.132 seconds (JVM running for 2789.576)
+2021-03-13 15:56:45,763 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-2] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=1000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 15:57:38,423 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-4] No hotel exists to update
+2021-03-13 15:57:38,430 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-4] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: No hotel exists to update]
+2021-03-13 15:58:23,018 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-5] No hotel found with this hotel id 4
+2021-03-13 15:58:23,020 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-5] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: No hotel found with this hotel id 4]
+2021-03-13 15:58:37,738 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8082-exec-6] SQL Error: 0, SQLState: 23503
+2021-03-13 15:58:37,739 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8082-exec-6] ERROR: update or delete on table "hotel" violates foreign key constraint "fkidiwj07rc59td0ghb2ljn91xw" on table "booking_details"
+  Detail: Key (hotel_id)=(2) is still referenced from table "booking_details".
+2021-03-13 15:58:37,796 FATAL c.c.s.h.e.AlreadyExistsException [http-nio-8082-exec-6] Booking exists for a room in this hotel, cannot delete.
+2021-03-13 15:58:37,799 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-6] Resolved [com.cap.sprint.hbms.exceptions.AlreadyExistsException: Booking exists for a room in this hotel, cannot delete.]
+2021-03-13 16:01:02,286 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:01:02,287 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:01:02,287 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:01:04,133 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:01:04,460 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.215 seconds (JVM running for 3103.498)
+2021-03-13 16:03:51,705 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:03:51,705 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:03:51,705 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:03:53,663 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:03:53,988 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.339 seconds (JVM running for 3273.026)
+2021-03-13 16:04:24,440 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-2] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 16:04:29,383 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-3] Optional.empty
+2021-03-13 16:08:01,427 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:08:01,428 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:08:01,428 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:08:03,450 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:08:03,851 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.467 seconds (JVM running for 3522.89)
+2021-03-13 16:08:05,604 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-2] Optional.empty
+2021-03-13 16:08:08,284 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-4] Optional.empty
+2021-03-13 16:09:22,584 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:09:22,585 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:09:22,585 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:09:24,428 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:09:24,825 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.28 seconds (JVM running for 3603.864)
+2021-03-13 16:09:25,582 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-2] Hotel not found
+2021-03-13 16:09:25,586 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-2] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: Hotel not found]
+2021-03-13 16:10:12,116 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:10:12,117 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:10:12,117 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:10:13,935 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:10:14,232 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.178 seconds (JVM running for 3653.27)
+2021-03-13 16:10:44,216 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:10:44,217 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:10:44,217 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:10:45,870 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:10:46,116 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.989 seconds (JVM running for 3685.155)
+2021-03-13 16:10:55,709 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:10:55,710 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:10:55,710 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:10:57,530 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:10:57,870 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.222 seconds (JVM running for 3696.908)
+2021-03-13 16:11:19,830 INFO c.c.s.h.s.RoomDetailsServicesImpl [http-nio-8082-exec-2] RoomDetails [room_id=1, roomNo=47, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 16:12:03,758 WARN o.s.w.s.m.m.a.ResponseEntityExceptionHandler [http-nio-8082-exec-3] Request method 'PUT' not supported
+2021-03-13 16:12:03,760 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-3] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2021-03-13 16:14:48,512 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:14:48,513 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:14:48,513 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:14:50,509 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:14:51,148 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.737 seconds (JVM running for 3930.186)
+2021-03-13 16:15:41,149 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:15:41,150 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:15:41,151 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:15:42,996 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:15:43,292 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.201 seconds (JVM running for 3982.33)
+2021-03-13 16:15:55,874 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:15:55,875 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:15:55,875 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:15:57,522 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:15:57,785 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.953 seconds (JVM running for 3996.824)
+2021-03-13 16:17:17,669 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:17:17,669 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:17:17,670 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:17:19,322 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:17:19,558 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.929 seconds (JVM running for 4078.596)
+2021-03-13 16:18:00,674 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:18:00,675 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:18:00,675 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:18:02,597 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:18:02,850 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.217 seconds (JVM running for 4121.889)
+2021-03-13 16:18:28,651 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:18:28,651 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:18:28,652 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:18:30,188 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:18:30,533 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.915 seconds (JVM running for 4149.571)
+2021-03-13 16:22:12,744 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:22:12,745 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:22:12,745 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:22:15,295 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:22:15,748 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 3.077 seconds (JVM running for 4374.787)
+2021-03-13 16:22:34,735 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:22:34,736 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:22:34,736 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:22:37,240 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:22:37,602 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.924 seconds (JVM running for 4396.641)
+2021-03-13 16:25:27,606 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:25:27,606 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:25:27,606 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:25:29,267 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:25:29,542 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.974 seconds (JVM running for 4568.581)
+2021-03-13 16:27:18,329 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-6] Optional.empty
+2021-03-13 16:27:59,503 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-8] Optional[BookingDetails [bookingId=3, user=User [userId=4, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:28:11,572 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-9] Optional[BookingDetails [bookingId=9, user=User [userId=10, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:30:55,273 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-1] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 16:30:55,276 INFO c.c.s.h.s.RoomDetailsServicesImpl [http-nio-8082-exec-1] RoomDetails [room_id=5, roomNo=49, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 16:31:06,496 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-3] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 16:31:06,498 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-3] No Room Details found with id 9
+2021-03-13 16:31:06,510 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-3] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: No Room Details found with id 9]
+2021-03-13 16:31:41,075 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unresolved forward references for: ; nested exception is com.fasterxml.jackson.databind.deser.UnresolvedForwardReference: Unresolved forward references for: 
+ at [Source: (PushbackInputStream); line: 41, column: 1]Object id [2] (for `com.cap.sprint.hbms.entities.Hotel`) at [Source: (PushbackInputStream); line: 38, column: 23].]
+2021-03-13 16:32:00,279 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-6] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unresolved forward references for: ; nested exception is com.fasterxml.jackson.databind.deser.UnresolvedForwardReference: Unresolved forward references for: 
+ at [Source: (PushbackInputStream); line: 41, column: 1]Object id [7] (for `com.cap.sprint.hbms.entities.Hotel`) at [Source: (PushbackInputStream); line: 38, column: 23].]
+2021-03-13 16:35:25,859 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:35:25,860 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:35:25,860 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:35:27,630 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:35:27,875 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.052 seconds (JVM running for 5166.913)
+2021-03-13 16:35:43,213 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-2] Optional[BookingDetails [bookingId=9, user=User [userId=10, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:36:13,515 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unresolved forward references for: ; nested exception is com.fasterxml.jackson.databind.deser.UnresolvedForwardReference: Unresolved forward references for: 
+ at [Source: (PushbackInputStream); line: 41, column: 1]Object id [2] (for `com.cap.sprint.hbms.entities.Hotel`) at [Source: (PushbackInputStream); line: 38, column: 23].]
+2021-03-13 16:36:27,050 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-5] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Problem deserializing property 'hotel' (expected type: [simple type, class com.cap.sprint.hbms.entities.Hotel]; actual type: `com.cap.sprint.hbms.entities.RoomDetails`), problem: argument type mismatch; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Problem deserializing property 'hotel' (expected type: [simple type, class com.cap.sprint.hbms.entities.Hotel]; actual type: `com.cap.sprint.hbms.entities.RoomDetails`), problem: argument type mismatch (through reference chain: com.cap.sprint.hbms.entities.BookingDetails["roomDetailsList"]->java.util.ArrayList[0]->com.cap.sprint.hbms.entities.RoomDetails["hotel"])]
+2021-03-13 16:36:34,667 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Already had POJO for id (java.lang.Integer) [[ObjectId: key=8, type=com.fasterxml.jackson.databind.deser.impl.PropertyBasedObjectIdGenerator, scope=java.lang.Object]]; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Already had POJO for id (java.lang.Integer) [[ObjectId: key=8, type=com.fasterxml.jackson.databind.deser.impl.PropertyBasedObjectIdGenerator, scope=java.lang.Object]] (through reference chain: com.cap.sprint.hbms.entities.BookingDetails["roomDetailsList"]->java.util.ArrayList[0]->com.cap.sprint.hbms.entities.RoomDetails["roomId"])]
+2021-03-13 16:41:40,147 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:41:40,148 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:41:40,148 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:41:41,887 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:41:42,166 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.06 seconds (JVM running for 5541.204)
+2021-03-13 16:41:48,669 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:41:48,670 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:41:48,670 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:41:50,350 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:41:50,623 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.003 seconds (JVM running for 5549.662)
+2021-03-13 16:42:12,619 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Already had POJO for id (java.lang.Integer) [[ObjectId: key=8, type=com.fasterxml.jackson.databind.deser.impl.PropertyBasedObjectIdGenerator, scope=java.lang.Object]]; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Already had POJO for id (java.lang.Integer) [[ObjectId: key=8, type=com.fasterxml.jackson.databind.deser.impl.PropertyBasedObjectIdGenerator, scope=java.lang.Object]] (through reference chain: com.cap.sprint.hbms.entities.BookingDetails["roomDetailsList"]->java.util.ArrayList[0]->com.cap.sprint.hbms.entities.RoomDetails["roomId"])]
+2021-03-13 16:42:25,173 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Problem deserializing property 'hotel' (expected type: [simple type, class com.cap.sprint.hbms.entities.Hotel]; actual type: `com.cap.sprint.hbms.entities.RoomDetails`), problem: argument type mismatch; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Problem deserializing property 'hotel' (expected type: [simple type, class com.cap.sprint.hbms.entities.Hotel]; actual type: `com.cap.sprint.hbms.entities.RoomDetails`), problem: argument type mismatch (through reference chain: com.cap.sprint.hbms.entities.BookingDetails["roomDetailsList"]->java.util.ArrayList[0]->com.cap.sprint.hbms.entities.RoomDetails["hotel"])]
+2021-03-13 16:42:30,750 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-6] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 16:42:30,758 INFO c.c.s.h.s.RoomDetailsServicesImpl [http-nio-8082-exec-6] RoomDetails [room_id=8, roomNo=50, roomType=suite, rate_per_day=2000.0, isavailable=true]
+2021-03-13 16:42:30,807 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8082-exec-6] SQL Error: 0, SQLState: 23505
+2021-03-13 16:42:30,808 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8082-exec-6] ERROR: duplicate key value violates unique constraint "uk_7pobs8uhhy7wgs2r1p84g8rga"
+  Detail: Key (room_details_list_room_id)=(8) already exists.
+2021-03-13 16:42:30,811 ERROR o.a.j.l.DirectJDKLog [http-nio-8082-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [uk_7pobs8uhhy7wgs2r1p84g8rga]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "uk_7pobs8uhhy7wgs2r1p84g8rga"
+  Detail: Key (room_details_list_room_id)=(8) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:473) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:393) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164) ~[postgresql-42.2.18.jar:42.2.18]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130) ~[postgresql-42.2.18.jar:42.2.18]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.persister.collection.AbstractCollectionPersister.recreate(AbstractCollectionPersister.java:1357) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.action.internal.CollectionRecreateAction.execute(CollectionRecreateAction.java:50) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:723) ~[?:?]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:345) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:93) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1362) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:453) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3212) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2380) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.4.28.Final.jar:5.4.28.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.4.jar:5.3.4]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.4.jar:5.3.4]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.4.jar:5.3.4]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.4.jar:5.3.4]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.4.jar:5.3.4]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.4.jar:5.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.4.jar:5.3.4]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.4.jar:5.3.4]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.4.jar:5.3.4]
+	at com.cap.sprint.hbms.services.BookingDetailsServicesImpl$$EnhancerBySpringCGLIB$$13b3b6ac.addBookingDetails(<generated>) ~[main/:?]
+	at com.cap.sprint.hbms.controllers.BookingDetailsController.addBookingDetails(BookingDetailsController.java:64) ~[main/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:564) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1060) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:962) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.4.jar:5.3.4]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.43.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.4.jar:5.3.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:887) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1684) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.43.jar:9.0.43]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-03-13 16:42:42,513 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-8] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 16:42:42,516 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-8] No Room Details found with id 11
+2021-03-13 16:42:42,519 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-8] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: No Room Details found with id 11]
+2021-03-13 16:46:45,956 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:46:45,957 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:46:45,957 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:46:47,661 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:46:47,933 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.022 seconds (JVM running for 5846.972)
+2021-03-13 16:47:48,419 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:47:48,420 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:47:48,420 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:47:50,343 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:47:50,611 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.228 seconds (JVM running for 5909.649)
+2021-03-13 16:48:48,576 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:48:48,577 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:48:48,577 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:48:50,418 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:48:50,692 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.152 seconds (JVM running for 5969.731)
+2021-03-13 16:49:35,890 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:49:35,891 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:49:35,891 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:49:37,522 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:49:37,785 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.932 seconds (JVM running for 6016.824)
+2021-03-13 16:50:51,440 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:50:51,441 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:50:51,441 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:50:53,102 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:50:53,356 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.954 seconds (JVM running for 6092.394)
+2021-03-13 16:51:21,658 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-2] Optional[BookingDetails [bookingId=9, user=User [userId=10, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:51:29,576 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-3] [BookingDetails [bookingId=3, user=User [userId=4, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0], BookingDetails [bookingId=9, user=User [userId=10, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0], BookingDetails [bookingId=11, user=User [userId=12, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:51:56,114 FATAL c.c.s.h.e.NotFoundException [http-nio-8082-exec-4] Booking details not found
+2021-03-13 16:51:56,118 WARN o.s.w.s.h.AbstractHandlerExceptionResolver [http-nio-8082-exec-4] Resolved [com.cap.sprint.hbms.exceptions.NotFoundException: Booking details not found]
+2021-03-13 16:52:05,463 INFO c.c.s.h.s.BookingDetailsServicesImpl [http-nio-8082-exec-5] Optional[BookingDetails [bookingId=9, user=User [userId=10, userName=Raj, email=rajjj@gmail, password=Raj123!, role=Visitor, mobile=9870065522, address=Chennai], bookedFrom=2021-03-06, bookedTo=2021-06-08, noOfAdults=3, noOfChildren=4, amount=200.0]]
+2021-03-13 16:54:53,131 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:54:53,131 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:54:53,132 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:54:54,944 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:54:55,199 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 2.109 seconds (JVM running for 6334.238)
+2021-03-13 16:55:29,169 INFO o.s.b.StartupInfoLogger [restartedMain] Starting Application using Java 15.0.1 on LAPTOP-NK9VIMR6 with PID 17864 (C:\Users\swaroop\git\repository\finalsprint\sprint.hbms\bin\main started by swaroop in C:\Users\swaroop\git\repository\finalsprint\sprint.hbms)
+2021-03-13 16:55:29,170 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-13 16:55:29,170 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-03-13 16:55:30,806 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-13 16:55:31,086 INFO o.s.b.StartupInfoLogger [restartedMain] Started Application in 1.9 seconds (JVM running for 6370.124)
+2021-03-13 17:01:52,375 INFO c.c.s.h.s.HotelServicesImpl [http-nio-8082-exec-3] Optional[Hotel [hotelid=2, city=Bangalore, hotelname=Taj, address=yelahanka, description=5 star, average_rate_per_day=7000.0, email=jaz@email.com, phone1=111, phone2=222, website=jaz.com]]
+2021-03-13 18:20:51,671 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-35 housekeeper] HikariPool-35 - Thread starvation or clock leap detected (housekeeper delta=7m20s402ms382µs).

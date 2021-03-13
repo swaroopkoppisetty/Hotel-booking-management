@@ -19,6 +19,7 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import io.swagger.annotations.ApiModel;
@@ -57,8 +58,7 @@ public class RoomDetails {
 	
 	@ApiModelProperty(notes = "File data")
 	@Lob
-//	@Basic(fetch = FetchType.LAZY)
-//	 @Column(name = "photo", columnDefinition="BLOB")
+	@JsonIgnore
 	private byte[] data;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)

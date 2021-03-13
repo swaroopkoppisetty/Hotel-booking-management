@@ -39,9 +39,8 @@ public class HotelServicesImpl implements IHotelService{
 		
 		Hotel updatehotel=hotelRepository.findByHotelId(hotel.getHotelId());
 		
-			
-			
-			
+		if(updatehotel != null)
+		{
 			if(hotel.getDescription()!= null)
 			{updatehotel.setDescription(hotel.getDescription());}
 			if(hotel.getAverage_rate_per_day()!= 0.0)
@@ -54,8 +53,13 @@ public class HotelServicesImpl implements IHotelService{
 			{updatehotel.setPhone2(hotel.getPhone2());}
 			if(hotel.getWebsite()!= null)
 			{updatehotel.setWebsite(hotel.getWebsite());}
-	
+			
 			return updatehotel;
+		}
+		else throw new NotFoundException("No hotel exists to update");
+			
+	
+		
 
 }
 		
@@ -65,9 +69,11 @@ public class HotelServicesImpl implements IHotelService{
 		{
 			Optional<Hotel> hotel = hotelRepository.findById(id);
 			if(hotel.isPresent())
-			{try {
+			{
+				try 
+				{
 				hotelRepository.deleteById(id);
-			}
+				}
 			catch(DataIntegrityViolationException e){
 				throw new AlreadyExistsException("Booking exists for a room in this hotel, cannot delete.");}
 			}
@@ -83,6 +89,10 @@ public class HotelServicesImpl implements IHotelService{
 		
 		public List<Hotel> viewHotelList(){
 			List<Hotel> list = hotelRepository.findAll();
+			if(list.isEmpty())
+				throw new NotFoundException("No hotels Found to show");
+			
+			
 			logger.info(list);
 			return list;
 		}
@@ -90,20 +100,33 @@ public class HotelServicesImpl implements IHotelService{
 		
 		public Optional<Hotel> viewHotel(int hotelId) {
 			Optional<Hotel> h = hotelRepository.findById(hotelId);
-            
-			logger.info(h);
-		    return h;
-		}
+			
+			if(!h.isPresent())
+			
+				throw new NotFoundException("Hotel not found");
+				
+			else 
+			{
+				logger.info(h);
+			    return h;
+			}
+				
+}
 
 		
 		public Hotel viewHotelByName(String hotelName) {
 			Hotel h = hotelRepository.findByHotelName(hotelName);
-
-			logger.info(h);
-		    return h;
-	
-		
+			if(h == null)
 			
+				throw new NotFoundException("Hotel not found");
+			
+			else 
+			{
+				logger.info(h);
+			    return h;
+			}
+				
+	
 		}
 
 		

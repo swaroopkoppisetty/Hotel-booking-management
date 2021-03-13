@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -40,6 +41,7 @@ public class Hotel {
 	@ApiModelProperty(notes = "Hotel Website")
 	private String website;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "hotel", cascade = CascadeType.PERSIST)
 	@ApiModelProperty(notes = "Rooms to be booked")
 	private List<RoomDetails> roomDetailsList;

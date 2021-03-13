@@ -80,10 +80,10 @@ public class RoomDetailsController {
 	                file.getContentType(), file.getSize());
 	    }
 	  
-	  @GetMapping("/downloadFile/{fileId}")
-	    public ResponseEntity<Resource> downloadFile(@PathVariable int fileId) {
+	  @GetMapping("/downloadFile/{roomId}")
+	    public ResponseEntity<Resource> downloadFile(@PathVariable int roomId) {
 	        // Load file from database
-	        RoomDetails dbFile = roomDetailsServices.getFile(fileId);
+	        RoomDetails dbFile = roomDetailsServices.getFile(roomId);
 
 	        return ResponseEntity.ok()
 	                .contentType(MediaType.parseMediaType(dbFile.getFileType()))

@@ -1,52 +1,70 @@
-package cap.sprint.capsprinthbms.entities;
+package com.cap.sprint.hbms.entities;
 
-import java.util.Optional;
 
+
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Transient;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import org.hibernate.annotations.Type;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
+@ApiModel(description = "Room Details for Booking")
 @JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class, 
 		property = "roomId")
 public class RoomDetails {
 	
 	@Id
+//	@SequenceGenerator(name="room_sequence",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int roomId;
+	@ApiModelProperty(notes = "Room Id for Booking reference")
+	private int roomId;
 	
 	@Column(unique = true)
-	String roomNo;
-	String roomType;
-	double rate_per_day;
-	boolean isavailable;
+	@ApiModelProperty(notes = "Room No of specific rooms[has to be unique]")
+	private String roomNo;
 	
+	@ApiModelProperty(notes = "Room Type for User reference")
+	private String roomType;
+	
+	@ApiModelProperty(notes = "Rate Rooms per day ")
+	private double rate_per_day;
+	
+	@ApiModelProperty(notes = "Helps to check if rooms are available[set as true or false]")
+	private boolean isavailable;
+	@ApiModelProperty(notes = "Name of the File to be uploaded")
 	String fileName;
-
+	@ApiModelProperty(notes = "Type of the File to be uploaded")
     String fileType;
 	
-    @JsonIgnore
+	
+	@ApiModelProperty(notes = "File data")
 	@Lob
-	byte[] data;
+//	@Basic(fetch = FetchType.LAZY)
+//	 @Column(name = "photo", columnDefinition="BLOB")
+	private byte[] data;
 	
-	
-	
-	
-	@ManyToOne(cascade = CascadeType.PERSIST )
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "hotel_id")
-	Hotel hotel;
+	@ApiModelProperty(notes = "Hotel with rooms to be booked")
+	private Hotel hotel;
 	
 	public RoomDetails() {
 		
@@ -58,21 +76,13 @@ public class RoomDetails {
 	public RoomDetails( String roomNo, String roomType, double rate_per_day, boolean isavailable,
 			Hotel hotel) {
 		super();
-		//this.room_id = room_id;
+		
 		this.roomNo = roomNo;
 		this.roomType = roomType;
 		this.rate_per_day = rate_per_day;
 		this.isavailable = isavailable;
 		this.hotel = hotel;
 	}
-
-	
-
-
-
-	
-
-
 
 	public RoomDetails(String roomNo, String roomType, double rate_per_day, boolean isavailable, String fileName,
 			String fileType, byte[] data) {

@@ -1,4 +1,4 @@
-package cap.sprint.capsprinthbms;
+package com.cap.sprint.hbms;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,20 +6,23 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import cap.sprint.capsprinthbms.entities.BookingDetails;
-import cap.sprint.capsprinthbms.entities.Hotel;
-import cap.sprint.capsprinthbms.entities.RoomDetails;
-import cap.sprint.capsprinthbms.services.BookingDetailsServicesImpl;
-import cap.sprint.capsprinthbms.services.RoomDetailsServicesImpl;
+import com.cap.sprint.hbms.entities.BookingDetails;
+import com.cap.sprint.hbms.entities.Hotel;
+import com.cap.sprint.hbms.entities.RoomDetails;
+import com.cap.sprint.hbms.exceptions.AlreadyExistsException;
+import com.cap.sprint.hbms.services.BookingDetailsServicesImpl;
+import com.cap.sprint.hbms.services.RoomDetailsServicesImpl;
 
 
 @SpringBootTest
 class TestRoomDetails {
-
+	Logger logger = LogManager.getLogger(TestRoomDetails.class);
 	@Autowired
 	BookingDetailsServicesImpl bookingDetailsServicesImpl;
 	
@@ -30,9 +33,11 @@ class TestRoomDetails {
 	public void testaddRoomDetails() {
 		
 		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
-		System.out.println(hotel);
-		RoomDetails roomdetails = new RoomDetails("104", "suite", 2000.00, true, hotel);
-		System.out.println(roomdetails);
+//		System.out.println(hotel);
+		logger.info(hotel);
+		RoomDetails roomdetails = new RoomDetails("48", "suite", 2000.00, true, hotel);
+//		System.out.println(roomdetails);
+		logger.info(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);
 	
 		
@@ -41,13 +46,15 @@ class TestRoomDetails {
 	//@Test
 	public void testfindRoomDetails() {
 		RoomDetails rd = roomDetailsServicesImpl.findRoomDetails(1);
-		System.out.println(rd);
+//		System.out.println(rd);
+		logger.info(rd);
 	}
 	
-//	@Test
+	//@Test
 	public void testfindAllRoomDetails() {
 		List<RoomDetails> allRoomDetails = roomDetailsServicesImpl.findAllRoomDetails();
-		System.out.println(allRoomDetails);
+//		System.out.println(allRoomDetails);
+		logger.info(allRoomDetails);
 	}
 
 	
@@ -61,7 +68,8 @@ class TestRoomDetails {
 		
 		
 		RoomDetails rooms = roomDetailsServicesImpl.updateRoomDetails(roomDetails);
-		System.out.println(rooms);
+//		System.out.println(rooms);
+		logger.info(rooms);
 
 	}
 	

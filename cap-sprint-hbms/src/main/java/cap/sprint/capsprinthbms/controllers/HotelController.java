@@ -41,8 +41,8 @@ public class HotelController {
 	@GetMapping("/hotel")
 	@ResponseStatus(code = HttpStatus.OK)
 	public List<Hotel> viewHotelList() {
-		return hotelService.viewHotelList();
-	}
+		return hotelService.viewHotelList();	
+		}
 	
 	
 	@PutMapping("/hotel")

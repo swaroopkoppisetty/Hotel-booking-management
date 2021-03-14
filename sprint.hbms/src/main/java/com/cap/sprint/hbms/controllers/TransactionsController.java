@@ -27,8 +27,7 @@ public class TransactionsController
 {
 	@Autowired
 	TransactionsServicesImpl  transactionsServicesImpl;
-	@Autowired
-	ITransactionsRepository transactionsRepository;
+	
 	/**
 	 * This method is for adding a Transactions
 	 * 
@@ -57,7 +56,7 @@ public class TransactionsController
 
 public ResponseEntity<Transactions> findTransaction(@ApiParam(value = "get Transaction details of Payment done", required = true)@PathVariable int id)
 {
-	 Transactions t = transactionsRepository.findById(id).get();
-	 return new ResponseEntity<Transactions>(t, HttpStatus.OK);
+	 Transactions transaction = transactionsServicesImpl.viewTransactions(id).get();
+	 return new ResponseEntity<>(transaction, HttpStatus.OK);
 }
 }

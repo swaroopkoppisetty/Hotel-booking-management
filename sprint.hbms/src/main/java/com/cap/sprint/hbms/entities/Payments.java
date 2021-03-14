@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
-@ApiModel(description = "Details about Payment During Booking")
+@ApiModel(description = "Details about Payment")
 @JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class, 
 		property = "paymentId")

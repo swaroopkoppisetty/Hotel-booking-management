@@ -32,7 +32,7 @@ class TestTransactions {
 	public void testAddTransaction()
 	{
 	
-		User user = new User(5,"Raj", "rajjj@gmail","Raj123!", "Visitor", "9870065522", "Chennai");
+		User user = new User(4,"Raj", "rajjj@gmail","Raj123!", "Visitor", "9870065522", "Chennai");
 //		System.out.println(user);
 		logger.info(user);
 		Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
@@ -42,10 +42,10 @@ class TestTransactions {
 		rd.setRoomId(1);
 //		System.out.println(rd);
 		logger.info(rd);
-		BookingDetails bd = new BookingDetails(4,user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel,Arrays.asList(rd));
+		BookingDetails bd = new BookingDetails(3,user, LocalDate.of(2021, 3, 6), LocalDate.of(2021, 06, 8), 3, 4, 200.00, hotel,Arrays.asList(rd));
 //		System.out.println(bd);
 		logger.info(bd);
-		Payments payment = new Payments(8,bd);
+		Payments payment = new Payments(15,bd);
 //		System.out.println(payment);
 		logger.info(payment);
 		

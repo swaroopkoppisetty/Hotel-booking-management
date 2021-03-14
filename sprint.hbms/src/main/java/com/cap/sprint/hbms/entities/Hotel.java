@@ -3,6 +3,8 @@ package com.cap.sprint.hbms.entities;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,26 +20,39 @@ import io.swagger.annotations.ApiModelProperty;
 public class Hotel {
 		
 	@Id
-//	@SequenceGenerator(name="hotel_sequence",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@ApiModelProperty(notes = "Hotel id for a booking")
 	private int hotelId;
+	
 	@ApiModelProperty(notes = "Hotel City")
 	private String city;
+	
 	@ApiModelProperty(notes = "Hotel Name")
 	private String hotelName;
+	
 	@ApiModelProperty(notes = "Hotel Address")
 	private String address;
+	
 	@ApiModelProperty(notes = "Hotel Description")
 	String description;
+	
 	@ApiModelProperty(notes = "Average price of rooms")
 	private double average_rate_per_day;
+	
 	@ApiModelProperty(notes = "Hotel Email")
+	@Pattern(regexp = "^(.+)@(.+)$", message = "Provide valid email")
 	private String email;
+	
 	@ApiModelProperty(notes = "Hotel Primary Phone No")
+	@Pattern(regexp = "^[7-9][0-9]{9}$", message = "Numbers only")
+	@Size(min = 10, max = 10, message = "Mobile Number should be 10 digits")
 	private String phone1;
+	
 	@ApiModelProperty(notes = "Hotel Secondary Phone No")
+	@Pattern(regexp = "^[7-9][0-9]{9}$", message = "Numbers only")
+	@Size(min = 10, max = 10, message = "Mobile Number should be 10 digits")
 	private String phone2;
+	
 	@ApiModelProperty(notes = "Hotel Website")
 	private String website;
 	

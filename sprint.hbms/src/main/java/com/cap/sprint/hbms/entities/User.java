@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 public class User {
 	@Id
 	
-//    @SequenceGenerator(name="user_sequence",allocationSize = 1)
+
 	@ApiModelProperty(notes = "User id for booking")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;

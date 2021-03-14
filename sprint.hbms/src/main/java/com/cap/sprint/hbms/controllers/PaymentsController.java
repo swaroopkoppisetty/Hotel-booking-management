@@ -30,8 +30,7 @@ public class PaymentsController
 	@Autowired
 	PaymentsServicesImpl paymentsServicesImpl;
 	
-	@Autowired
-	IPaymentsRepository p;
+	
 	/**
 	 * This method is for adding Payment Details
 	 * 
@@ -61,8 +60,8 @@ public class PaymentsController
 	@ApiOperation(value = "View Payment by id", notes = "Provide payment id of payment to be viewed", response = Payments.class)
 	public ResponseEntity<Payments> findPayment(@ApiParam(value = "ID value to view payment")@PathVariable int id)
 	{
-		Payments ps = p.findById(id).get();
-		return new ResponseEntity<>(ps,HttpStatus.OK);
+		Payments payment = paymentsServicesImpl.viewPayments(id).get();
+		return new ResponseEntity<>(payment,HttpStatus.OK);
 				
 	}
 }

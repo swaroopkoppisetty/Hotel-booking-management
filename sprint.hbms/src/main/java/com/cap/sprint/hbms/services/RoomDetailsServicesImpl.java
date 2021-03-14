@@ -38,6 +38,8 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		
 		@Transactional
 		public RoomDetails addRoomDetails(RoomDetails rd) {
+		
+		
 			try {
 				Hotel hotel = hotelRepository.findByHotelName((rd.getHotel().getHotelName()));
 				if(hotel != null){
@@ -103,7 +105,7 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 			
 			if(room.isPresent()) {
 				try {
-				roomDetailsRepository.deleteById(id);
+					roomDetailsRepository.deleteById(id);
 				}
 				catch(DataIntegrityViolationException e){
 					throw new AlreadyExistsException("Booking exists for this room, cannot delete.");
@@ -146,6 +148,14 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 		        return roomDetailsRepository.findById(roomId)
 		                .orElseThrow(() -> new NotFoundException("File not found with id " + roomId));
 		  }
+		
+		
+		@Transactional
+		public void bookRoom(RoomDetails room)
+		{
+			room = this.findRoomDetails(room.getRoomId());
+			room.setIsavailable(false);
+		}
 		
 
 }

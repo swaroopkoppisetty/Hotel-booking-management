@@ -78,15 +78,16 @@ public class BookingDetailsServicesImpl {
 				Optional<BookingDetails> bd = iBookingDetailsRepository.findById(id);
 				if(bd.isPresent()) {
 					try {
-					iBookingDetailsRepository.deleteById(id);
-				}
-				catch(DataIntegrityViolationException e) {
-					throw new AlreadyExistsException("Booking exists for a room , cannot delete.");
-				}
-				}
-				else throw new NotFoundException("No Booking Details found with this id"+ id);
-				
-				}
+							iBookingDetailsRepository.deleteById(id);
+						}
+						catch(DataIntegrityViolationException e){
+							throw new AlreadyExistsException("Booking exists for this room, cannot delete.");
+							
+						}
+					}
+					else throw new NotFoundException("No room details found with this room id "+ id+ "to delete");
+
+				   }
 	
 			
 			

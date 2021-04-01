@@ -27,7 +27,7 @@ class TestHotel {
 	//@Test
 	public void testaddHotel() {
 		
-		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "9988776655", "7766554433", "jaz.com");
 //		System.out.println(hotel);
 		logger.info(hotel);
 		hotelServices.addHotel(hotel);

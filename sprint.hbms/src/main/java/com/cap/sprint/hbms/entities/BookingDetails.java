@@ -35,12 +35,14 @@ public class BookingDetails {
 	@ApiModelProperty(notes = "User for booking Rooms")
 	private User user;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-	@ApiModelProperty(notes = "Booking date", example = "22-02-2022")
+	//shape = JsonFormat.Shape.STRING,
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@ApiModelProperty(notes = "Booking date", example = "2022-02-20")
 	private LocalDate bookedFrom;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
-	@ApiModelProperty(notes = "Booking till date", example = "22-02-2022")
+	//shape = JsonFormat.Shape.STRING,
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@ApiModelProperty(notes = "Booking till date", example = "2022-02-20")
 	private LocalDate bookedTo;
 	
 	@ApiModelProperty(notes = "Number of adults")

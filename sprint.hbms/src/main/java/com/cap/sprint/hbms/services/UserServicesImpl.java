@@ -89,4 +89,17 @@ public class UserServicesImpl implements IUserService{
 		return updateUser;
 	}
 
+	public User findByUserName(String userName)
+	{
+		User user = userRepository.findByUserName(userName);
+		if (user != null) 
+		{
+			return user;
+		}
+		else 
+		{
+			throw new NotFoundException("User Doesnt Exist");
+		}
+	}
+
 }

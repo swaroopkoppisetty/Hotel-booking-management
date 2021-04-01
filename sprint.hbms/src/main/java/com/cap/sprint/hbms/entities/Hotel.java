@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -215,7 +217,7 @@ public class Hotel {
 	}
 
 	public List<RoomDetails> getRoomDetailsList() {
-		return roomDetailsList;
+		return roomDetailsList; 
 	}
 
 
@@ -225,7 +227,8 @@ public class Hotel {
 
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Hotel [hotelid=" + hotelId + ", city=" + city + ", hotelname=" + hotelName + ", address=" + address
 				+ ", description=" + description + ", average_rate_per_day=" + average_rate_per_day + ", email=" + email
 				+ ", phone1=" + phone1 + ", phone2=" + phone2 + ", website=" + website+"]";

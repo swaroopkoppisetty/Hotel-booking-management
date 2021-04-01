@@ -8,8 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
+
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -20,11 +19,12 @@ import io.swagger.annotations.ApiModelProperty;
 @Entity
 @ApiModel(description = "Details about Payment")
 @JsonIdentityInfo(
-		generator = ObjectIdGenerators.PropertyGenerator.class, 
+		generator = ObjectIdGenerators.PropertyGenerator.class,   // To overcome stack over flow error 
 		property = "paymentId")
-public class Payments {
+
+public class Payments 
+{
 	@Id
-//	@SequenceGenerator(name="payment_sequence",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@ApiModelProperty(notes = "Payment id after a booking")
 	private int paymentId;
@@ -37,8 +37,26 @@ public class Payments {
 	
 	
 	
+//default constructor
 	
-	
+public Payments() {
+		
+	}
+
+
+// constructors
+
+public Payments(int paymentId, BookingDetails bookingDetails) {
+		super();
+		this.paymentId = paymentId;
+		this.bookingDetails = bookingDetails;
+	}
+
+
+public Payments(BookingDetails bookingDetails) {
+	super();
+	this.bookingDetails = bookingDetails;
+}
 	
 
 	public int getPaymentId() {
@@ -57,33 +75,7 @@ public class Payments {
 		this.bookingDetails = bookingDetails;
 	}
 
-	
 
-
-public Payments(int paymentId, BookingDetails bookingDetails) {
-		super();
-		this.paymentId = paymentId;
-		this.bookingDetails = bookingDetails;
-	}
-
-
-
-	
-
-
-
-
-	
-	public Payments() {
-		
-	}
-
-
-
-public Payments(BookingDetails bookingDetails) {
-	super();
-	this.bookingDetails = bookingDetails;
-}
 	
 	
 

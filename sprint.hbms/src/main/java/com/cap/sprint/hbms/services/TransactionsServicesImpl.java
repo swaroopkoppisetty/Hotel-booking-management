@@ -1,5 +1,6 @@
 package com.cap.sprint.hbms.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.cap.sprint.hbms.entities.Payments;
 import com.cap.sprint.hbms.entities.Transactions;
+import com.cap.sprint.hbms.exceptions.AlreadyExistsException;
 import com.cap.sprint.hbms.exceptions.NotFoundException;
 import com.cap.sprint.hbms.repos.ITransactionsRepository;
 import com.cap.sprint.hbms.services_interfaces.ITransactionsService;
@@ -29,13 +31,22 @@ public class TransactionsServicesImpl implements ITransactionsService
 	{
 		Optional<Payments> payments = PaymentsServicesImpl.viewPayments(transactions.getPayments().getPaymentId());
 		
-
+		//if payment is not found throw an exception
 		if(!payments.isPresent())
 					throw new NotFoundException("payment is not present to add transaction");
 		else
 		{
-		transactions.setPayments(payments.get());
-		return transactionRepository.save(transactions);
+	//if Transaction is already present throw exception
+			
+			Transactions foundTransaction = transactionRepository.findByPayments(payments.get());
+			
+			if(foundTransaction != null)
+			{
+				throw new AlreadyExistsException("Transaction already exists"); 
+			}
+	//add transaction
+			transactions.setPayments(payments.get());
+			return transactionRepository.save(transactions);
 		}
 		
 	}
@@ -43,6 +54,8 @@ public class TransactionsServicesImpl implements ITransactionsService
 	public Optional<Transactions> viewTransactions(int transactionId)
 	{
 		Optional<Transactions> transactions = transactionRepository.findById(transactionId);
+		
+		// if transaction is present return it or else throw exception 
 		
 		if(transactions.isPresent())
 		{
@@ -55,6 +68,15 @@ public class TransactionsServicesImpl implements ITransactionsService
 		}
 			
 			
+	}
+	
+	public List<Transactions> findAllTransactions() {
+		List<Transactions> rd = transactionRepository.findAll();
+		if(rd.isEmpty())
+			throw new NotFoundException("No transactions are present");
+			
+		 return rd;      
+		
 	}
 	
 

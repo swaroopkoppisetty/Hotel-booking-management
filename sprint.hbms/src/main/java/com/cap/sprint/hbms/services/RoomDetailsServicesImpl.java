@@ -116,7 +116,8 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 
 		   }
 		
-		public RoomDetails storeFile(MultipartFile file) {
+	
+	public RoomDetails storeFile(MultipartFile file) {
 	        
 			// Normalize file name
 	        
@@ -129,9 +130,9 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 	            if(fileName.contains("..")) {
 	                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
 	            }
-	            Hotel hotel = new Hotel(2,"Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "111", "222", "jaz.com");
+	            Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "9988776655", "7766554433", "jaz.com");
 	            
-	            RoomDetails room= new RoomDetails(1,"47","suite",2000.00,true,fileName,file.getContentType(), file.getBytes(),hotel);
+	            RoomDetails room= new RoomDetails(3,"51","suite",2000.00,true,fileName,file.getContentType(), file.getBytes(),hotel);
 	            
 
 	            return roomDetailsRepository.save(room);
@@ -143,7 +144,8 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 	    }
 		
 		
-		public RoomDetails getFile(int roomId)
+		
+	public RoomDetails getFile(int roomId)
 		 {
 		        return roomDetailsRepository.findById(roomId)
 		                .orElseThrow(() -> new NotFoundException("File not found with id " + roomId));
@@ -156,6 +158,13 @@ public class RoomDetailsServicesImpl implements IRoomDetailsService {
 			room = this.findRoomDetails(room.getRoomId());
 			room.setIsavailable(false);
 		}
+
+
+//		public RoomDetails findRoomType(String roomType) 
+//		{
+//			 return roomDetailsRepository.findByRoomType(roomType);
+//		}
+		                
 		
 
 }

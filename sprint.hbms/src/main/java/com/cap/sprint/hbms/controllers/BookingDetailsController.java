@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cap.sprint.hbms.entities.BookRequest;
 import com.cap.sprint.hbms.entities.BookingDetails;
+import com.cap.sprint.hbms.entities.Hotel;
+import com.cap.sprint.hbms.entities.RoomDetails;
+import com.cap.sprint.hbms.entities.User;
+import com.cap.sprint.hbms.exceptions.NotFoundException;
+import com.cap.sprint.hbms.repos.IRoomDetailsRepository;
 import com.cap.sprint.hbms.services.BookingDetailsServicesImpl;
 import com.cap.sprint.hbms.services.HotelServicesImpl;
 import com.cap.sprint.hbms.services.PaymentsServicesImpl;
@@ -28,6 +35,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = "/api/v1")
 @Api(value = "Booking", tags = { "BookingAPI" })
 public class BookingDetailsController {
@@ -46,7 +54,12 @@ public class BookingDetailsController {
 	
 	@Autowired
 	PaymentsServicesImpl paymentService;
-
+	
+	@Autowired
+	IRoomDetailsRepository  iRoomDetailsRepository;
+//	
+//	@Autowired
+//	BookRequest request;
 	
 	/**
 	 * This method is for adding a booking
@@ -60,9 +73,30 @@ public class BookingDetailsController {
 	@PostMapping("/bookingdetails")
 	@ApiOperation(value = "Add a booking", notes = "Provide Booking Details ", response = BookingDetails.class)
 //	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<BookingDetails> addBookingDetails(@ApiParam(value = "Booking to be added", required = true)@RequestBody BookingDetails bd) {
-		BookingDetails b =bookingdetailsService.addBookingDetails(bd);
-		return new ResponseEntity<>(b,HttpStatus.CREATED);}
+	public ResponseEntity<BookingDetails> addBookingDetails(@ApiParam(value = "Booking to be added", required = true)@RequestBody BookRequest request) {
+		//BookingDetails b =bookingdetailsService.addBookingDetails(bd);
+		
+		BookingDetails b = new BookingDetails();
+		Hotel hotel= new Hotel();
+		User user = new User();
+		List<RoomDetails> list = iRoomDetailsRepository.findAvailableByType(request.getRoomType());
+		
+		if(list.size()<request.getRoomCount())
+		{
+			
+			throw new NotFoundException("No rooms available to book");
+		}
+		user.setUserName(request.getUserName());
+		hotel.setHotelName(request.getHotelName());
+		b.setRoomDetailsList(list.subList(0, request.getRoomCount()));
+		b.setUser(user);
+		b.setHotel(hotel);
+		b.setBookedFrom(request.getBookedFrom());
+		b.setBookedTo(request.getBookedTo());
+		b.setNoOfAdults(request.getNoOfAdults());
+		b.setNoOfChildren(request.getNoOfChildren());
+		b.setAmount(request.getAmount());
+		return new ResponseEntity<>(bookingdetailsService.addBookingDetails(b),HttpStatus.CREATED);}
 	
 	/**
 	 * This method is for fetching a booking by id
@@ -102,11 +136,11 @@ public class BookingDetailsController {
 	 * 
 	 */
 	@PutMapping("/bookingdetails")
-	@ApiOperation(value = "Update a booking", notes = "Provide booking id, new no_of_adults and new no_of_adults", response = BookingDetails.class)
+	@ApiOperation(value = "Update a booking", notes = "Provide booking id, new no_of_adults and new no_of_children", response = BookingDetails.class)
 //	
 	public ResponseEntity<String> updateBookingDetails
-	(@ApiParam(value = "Booking to be updated", required = true)@RequestBody BookingDetails bd3) {
-		  bookingdetailsService.updateBookingDetails(bd3);
+	(@ApiParam(value = "Booking to be updated", required = true)@RequestBody BookingDetails bookingDetails) {
+		  bookingdetailsService.updateBookingDetails(bookingDetails);
 		 return new ResponseEntity<>("Successfuly updated", HttpStatus.ACCEPTED);
 	}
 	
@@ -128,3 +162,7 @@ public class BookingDetailsController {
 	}
 
 }
+
+
+
+// create a seperate class Bookrequest

@@ -21,7 +21,7 @@ class TestUser {
 	@Test
 	public void testaddUser() {
 		
-		User user = new User("Rani", "rani@gmail","Rani123!", "Visitor", "9870065522", "Chennai");
+		User user = new User("Raniiii", "raniiii@gmail","Ranii123!", "Visitor", "9870065522", "Chennai");
 
 		logger.info(user);
 		userServiceImpl.addUser(user);

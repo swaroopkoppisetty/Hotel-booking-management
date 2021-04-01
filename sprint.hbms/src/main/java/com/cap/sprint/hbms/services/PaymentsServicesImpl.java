@@ -2,16 +2,16 @@ package com.cap.sprint.hbms.services;
 
 
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.cap.sprint.hbms.entities.BookingDetails;
-import com.cap.sprint.hbms.entities.Hotel;
+
 import com.cap.sprint.hbms.entities.Payments;
 import com.cap.sprint.hbms.entities.RoomDetails;
 import com.cap.sprint.hbms.exceptions.AlreadyExistsException;
@@ -36,24 +36,33 @@ public class PaymentsServicesImpl implements IPaymentsService
 	{
 		Optional <BookingDetails> bookingDetails= bookingDetailsServicesImpl.viewBookingDetails(payment.getBookingDetails().getBookingId());
 		
+	//if booking details is not present throw not found exception
+		
 		if(!bookingDetails.isPresent())
-					throw new NotFoundException("Booking details are not present to add payment");
+					throw new NotFoundException("Booking details are not present to add payment"); 
 			
-			else 
+		else 
 			{
 				Payments foundPayment = paymentRepository.findByBookingDetails(bookingDetails.get());
-				
-					if(foundPayment != null)
+
+	//if payment already done for booking details throw an exception
+					
+				if(foundPayment != null)
 					{
-						throw new AlreadyExistsException("payment already exists");
+						throw new AlreadyExistsException("payment already exists"); 
 					}
 			
 			payment.setBookingDetails(bookingDetails.get());
-				
+			
+		//set room availability status to false after payment
+			
 				for(RoomDetails roomDetails : bookingDetails.get().getRoomDetailsList())
 				{
 					roomDetailsServicesImpl.bookRoom(roomDetails);
 				}
+				
+		//add payment 
+				
 				paymentRepository.save(payment);
 				return payment;
 
@@ -65,6 +74,9 @@ public class PaymentsServicesImpl implements IPaymentsService
 	{
 		Optional<Payments> payments = paymentRepository.findById(paymentId);
 		
+		
+// if payment is present return payments or else throw exception 
+		
 		if(payments.isPresent())
 		{
 			return payments;
@@ -75,6 +87,16 @@ public class PaymentsServicesImpl implements IPaymentsService
 				throw new NotFoundException("Payments not found");
 		}
 			
+	}
+	
+	
+	public List<Payments> findAllPayments() {
+		List<Payments> rd = paymentRepository.findAll();
+		if(rd.isEmpty())
+			throw new NotFoundException("No payments are present");
+			
+		 return rd;      
+		
 	}
 	
 	

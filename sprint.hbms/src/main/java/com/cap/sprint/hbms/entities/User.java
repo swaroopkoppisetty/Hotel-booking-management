@@ -1,5 +1,6 @@
 package com.cap.sprint.hbms.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,11 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 		property = "userId")
 public class User {
 	@Id
-	
-
 	@ApiModelProperty(notes = "User id for booking")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int userId;
+	@Column(unique = true)
 	@ApiModelProperty(notes = "Name of the User")
 	private String userName;
 	@ApiModelProperty(notes = "Email of User")

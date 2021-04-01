@@ -1,4 +1,4 @@
-package com.cap.sprint.hbms.services;
+    package com.cap.sprint.hbms.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,18 @@ import org.springframework.stereotype.Service;
 import com.cap.sprint.hbms.entities.BookingDetails;
 import com.cap.sprint.hbms.entities.Hotel;
 import com.cap.sprint.hbms.entities.RoomDetails;
+import com.cap.sprint.hbms.entities.User;
 import com.cap.sprint.hbms.exceptions.AlreadyExistsException;
 import com.cap.sprint.hbms.exceptions.NotFoundException;
 import com.cap.sprint.hbms.repos.IBookingDetailsRepository;
+import com.cap.sprint.hbms.repos.IRoomDetailsRepository;
 
 
 @Service
 public class BookingDetailsServicesImpl {
 	
 	Logger logger = LogManager.getLogger(BookingDetailsServicesImpl.class);
+	
 	@Autowired
 	IBookingDetailsRepository iBookingDetailsRepository;
 	
@@ -33,18 +36,28 @@ public class BookingDetailsServicesImpl {
 	@Autowired
 	HotelServicesImpl hotelServicesImpl;
 	
+	@Autowired
+	UserServicesImpl userServicesImpl;
+	
+	
 	@Transactional
 	public BookingDetails addBookingDetails(BookingDetails bd) {
 		
 		List<RoomDetails> rooms = new ArrayList<RoomDetails>();
-		Optional<Hotel> hotel= hotelServicesImpl.viewHotel(bd.getHotel().getHotelId());
+		Hotel hotel= hotelServicesImpl.viewHotelByName(bd.getHotel().getHotelName());
+		User user = userServicesImpl.findByUserName(bd.getUser().getUserName());
+		
 		
 		
 			for(RoomDetails rd : bd.getRoomDetailsList())
 			{
 				rooms.add(roomDetailsServicesImpl.findRoomDetails(rd.getRoomId()));
+				
+				
+
 			}
-			bd.setHotel(hotel.get());
+			bd.setUser(user);
+			bd.setHotel(hotel);
 			bd.setRoomDetailsList(rooms);
 			return iBookingDetailsRepository.save(bd);
 		

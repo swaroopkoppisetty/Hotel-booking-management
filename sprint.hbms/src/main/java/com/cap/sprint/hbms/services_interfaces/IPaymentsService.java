@@ -8,7 +8,7 @@ public interface IPaymentsService
 {
 	public Payments addPayment(Payments p);
 	
-	public Optional<Payments> viewPayments(int paymentId);
+	
 	
 	
 }

@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 		property = "transactionId")
 public class Transactions {
 	@Id
-	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@ApiModelProperty(notes = "Transaction Id for Payment reference")
 	private Integer transactionId;
@@ -30,11 +29,13 @@ public class Transactions {
 	private double amount;
 	
 	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="payment_id")
 	@ApiModelProperty(notes = "Details of Payment made by User")
 	private Payments payments;
 	
 	
-	
+
+//Constructorss
 
 	public Transactions(double amount) {
 		super();

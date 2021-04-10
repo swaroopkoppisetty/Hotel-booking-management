@@ -113,6 +113,13 @@ public class BookingDetailsController {
 		return new ResponseEntity<>(bd,HttpStatus.OK);
 	}
 	
+	@GetMapping("/bookingdetails/email/{email}")
+	@ApiOperation(value = "View booking by id", notes = "Provide booking id to be viewed", response = BookingDetails.class)
+//	@ResponseStatus(code = HttpStatus.OK)
+	 public ResponseEntity<List<BookingDetails>> viewBookingDetails(@ApiParam(value = "ID value to view booking", required = true) @PathVariable ("email") String email) {
+		List<BookingDetails> bookings = bookingdetailsService.viewBookingByEmail(email);
+		return new ResponseEntity<>(bookings,HttpStatus.OK);
+	}
 	/**
 	 * This method is for getting a list of all bookings .
 	 * 
@@ -127,6 +134,8 @@ public class BookingDetailsController {
 		List<BookingDetails> bookings = bookingdetailsService.viewBookingDetailsList();
 		return new ResponseEntity<>(bookings,HttpStatus.OK);
 	}
+	
+
 	
 	/**
 	 * This method is for updating no_of_adults and no_of_children of a booking

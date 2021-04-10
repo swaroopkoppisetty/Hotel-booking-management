@@ -40,6 +40,8 @@ public class BookingDetailsServicesImpl {
 	UserServicesImpl userServicesImpl;
 	
 	
+	
+	
 	@Transactional
 	public BookingDetails addBookingDetails(BookingDetails bd) {
 		
@@ -135,6 +137,34 @@ public class BookingDetailsServicesImpl {
 				logger.info(b);
 				return b;
 			}
+			
+			
+    public List<BookingDetails>viewBookingByEmail(String email){
+				
+				List<BookingDetails> b = iBookingDetailsRepository.findAll();
+				List<BookingDetails> bookings= new ArrayList<>();
+				
+				
+				
+				if(b.isEmpty())
+					throw new NotFoundException("No hotels Found to show");
+				
+				for(BookingDetails booking : b)
+				{
+					if(booking.getUser().getEmail().equals(email))
+					{
+						bookings.add(booking);
+					}
+				}
+				
+				
+				
+				
+				logger.info(b);
+				return bookings;
+			}
+			
+			
 			
 }
 	

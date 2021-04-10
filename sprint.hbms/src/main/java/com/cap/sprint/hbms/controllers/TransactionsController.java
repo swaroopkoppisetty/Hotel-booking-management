@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cap.sprint.hbms.entities.BookRequest;
 import com.cap.sprint.hbms.entities.Payments;
 import com.cap.sprint.hbms.entities.RoomDetails;
 import com.cap.sprint.hbms.entities.Transactions;
@@ -46,7 +47,8 @@ public class TransactionsController
 	{
 		Transactions t = transactionsServicesImpl.addTransaction(transactions);
 		return new ResponseEntity<Transactions>(t, HttpStatus.CREATED);
-	}
+		
+			}
 
 	/**
 	 * This method is for getting a Transaction by Id
@@ -56,7 +58,7 @@ public class TransactionsController
 	 * @throws NotFoundException
 	 */
 	 
-	@GetMapping("/transaction/{id}")
+	@GetMapping("/transaction/{id}") 
 	@ApiOperation(value = "Transaction Details of Payment", notes = "Transaction Details ", response = Transactions.class)
 	
 	public ResponseEntity<Transactions> findTransaction(@ApiParam(value = "get Transaction details of Payment done", required = true)@PathVariable int id)

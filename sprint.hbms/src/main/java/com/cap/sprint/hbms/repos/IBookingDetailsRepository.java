@@ -9,5 +9,7 @@ public interface IBookingDetailsRepository extends JpaRepository<BookingDetails,
 	
 
 	public BookingDetails findByBookingId(int bookingId);
+	
+	
 
 }

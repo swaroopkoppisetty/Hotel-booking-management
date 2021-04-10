@@ -32,10 +32,10 @@ class TestRoomDetails {
 	@Test
 	public void testaddRoomDetails() {
 		
-		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "5 star", 1000.00, "jaz@email.com", "9988776655", "7766554433", "jaz.com");
+		Hotel hotel = new Hotel("Bangalore", "Taj", "yelahanka", "Luxury Hotel", 1000.00, "jaz@email.com", "9988776655", "7766554433", "jaz.com");
 //		System.out.println(hotel);
 		logger.info(hotel);
-		RoomDetails roomdetails = new RoomDetails("54", "suite", 2000.00, true, hotel);
+		RoomDetails roomdetails = new RoomDetails("15", "suite", 2000.00, true, hotel);
 //		System.out.println(roomdetails);
 		logger.info(roomdetails);
 		roomDetailsServicesImpl.addRoomDetails(roomdetails);

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cap.sprint.hbms.entities.RoomDetails;
 import com.cap.sprint.hbms.entities.User;
+import com.cap.sprint.hbms.services.UserServicesImpl;
 import com.cap.sprint.hbms.services_interfaces.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,6 +31,9 @@ public class UserController {
 
 	@Autowired
 	IUserService userService;
+	
+	@Autowired
+	UserServicesImpl userServicesImpl;
 	/**
 	 * This method is for adding a User
 	 * 
@@ -76,6 +80,16 @@ public class UserController {
 			User u = userService.viewUser(id); 
 			return new ResponseEntity<>(u,HttpStatus.OK);
 		}
+		
+		
+		
+		@GetMapping("/users/email/{email}")
+		@ApiOperation(value = "View User by id", notes = "Provide user id of user to be viewed", response = User.class)
+		public ResponseEntity<User> viewUserByEmail(@ApiParam(value = "ID value to view user details")@PathVariable("email") String email){
+			User u = userServicesImpl.viewUserByEmail(email); 
+			return new ResponseEntity<>(u,HttpStatus.OK);
+		}
+		
 		
 		//VIEW ALL USERS
 		/**

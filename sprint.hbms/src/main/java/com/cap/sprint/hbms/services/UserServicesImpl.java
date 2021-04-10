@@ -65,6 +65,16 @@ public class UserServicesImpl implements IUserService{
 			}
 
 		}
+		
+		public User viewUserByEmail(String email) {
+			User user = userRepository.findByEmail(email);
+			if (user !=null) {
+				return user;
+			} else {
+				throw new NotFoundException("User Doesnt Exist");
+			}
+
+		}
 
 	// UPDATE USER
 	@Transactional

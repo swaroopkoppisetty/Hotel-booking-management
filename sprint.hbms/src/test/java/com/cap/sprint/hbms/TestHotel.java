@@ -24,10 +24,10 @@ class TestHotel {
     @Autowired
     IHotelRepository hotelRepository;
 
-	//@Test
+	@Test
 	public void testaddHotel() {
 		
-		Hotel hotel = new Hotel("Bangalore", "HotelJaz", "yelahanka", "5 star", 1000.00, "jaz@email.com", "9988776655", "7766554433", "jaz.com");
+		Hotel hotel = new Hotel("Bangalore", "Minerva", "yelahanka", "5 star", 1000.00, "Minerva@email.com", "9988776623", "7766554412", "Minerva.com");
 //		System.out.println(hotel);
 		logger.info(hotel);
 		hotelServices.addHotel(hotel);

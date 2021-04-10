@@ -24,6 +24,8 @@ public class BookRequest
 	private int roomCount;
 	private String hotelName;
 	
+
+	
 	
 	public String getUserName() {
 		return userName;

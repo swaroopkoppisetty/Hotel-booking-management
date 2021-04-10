@@ -9,5 +9,6 @@ import com.cap.sprint.hbms.entities.User;
 public interface IUserRepository extends JpaRepository<User, Integer>{
 	public User findByUserName(String name);
 	public User findUserByUserNameAndPassword(String userName , String password);
+	public User findByEmail(String email);
 }
 

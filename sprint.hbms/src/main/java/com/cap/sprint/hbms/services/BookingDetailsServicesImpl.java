@@ -20,10 +20,11 @@ import com.cap.sprint.hbms.exceptions.AlreadyExistsException;
 import com.cap.sprint.hbms.exceptions.NotFoundException;
 import com.cap.sprint.hbms.repos.IBookingDetailsRepository;
 import com.cap.sprint.hbms.repos.IRoomDetailsRepository;
+import com.cap.sprint.hbms.services_interfaces.IBookingDetailsService;
 
 
 @Service
-public class BookingDetailsServicesImpl {
+public class BookingDetailsServicesImpl implements IBookingDetailsService {
 	
 	Logger logger = LogManager.getLogger(BookingDetailsServicesImpl.class);
 	

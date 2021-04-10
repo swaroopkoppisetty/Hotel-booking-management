@@ -7,7 +7,7 @@ import com.cap.sprint.hbms.entities.BookingDetails;
 
 public interface IBookingDetailsService {
 	
-	public void addBookingDetails(BookingDetails bd);
+	public BookingDetails addBookingDetails(BookingDetails bd);
 	public BookingDetails updateBookingDetails(BookingDetails bd3);
 	public void removeBookingDetails(int id);
 	public Optional<BookingDetails> viewBookingDetails(int bookingId);
